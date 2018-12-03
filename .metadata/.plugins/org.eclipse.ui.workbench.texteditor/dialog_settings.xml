@@ -2,27 +2,27 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="MySQL5" key="selection"/>
+		<item value="borde" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="MySQL5"/>
-			<item value="EnployeeRepository"/>
-			<item value="&quot;org.hibernate.tutorial.jpa&quot;"/>
-			<item value="Statement"/>
-			<item value="System"/>
-			<item value="localhost"/>
-			<item value="8080"/>
-			<item value="Enployee"/>
-			<item value="En"/>
-			<item value="system"/>
-			<item value="d2"/>
-			<item value="pppp"/>
-			<item value="pppppppp"/>
-			<item value="d1"/>
-			<item value="ddd"/>
+			<item value="borde"/>
+			<item value="table-striped"/>
+			<item value="table-str"/>
+			<item value="table-"/>
+			<item value="table table"/>
+			<item value="table"/>
+			<item value="sys"/>
+			<item value="dis"/>
+			<item value="disp"/>
+			<item value="di"/>
+			<item value="des"/>
+			<item value="de"/>
+			<item value="desp"/>
+			<item value="serv"/>
+			<item value="per"/>
 		</list>
 		<list key="replacehistory">
 		</list>
