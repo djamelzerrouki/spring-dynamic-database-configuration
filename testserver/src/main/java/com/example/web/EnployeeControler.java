@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.example.TestserverApplication;
 import com.example.dao.EnployeeRepository;
 import com.example.entites.Enployee;
 
@@ -40,4 +41,15 @@ public class EnployeeControler {
 	public String bpml() {
  		return "index";
  }*/
+	
+	@RequestMapping(value="/home")
+	public String home(Model model) {
+	
+	       model.addAttribute("modeldata",TestserverApplication.showDatabase());
+
+
+ 		return "home";
+	}
+	
+	
 }

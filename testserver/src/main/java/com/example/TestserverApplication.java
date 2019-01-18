@@ -27,7 +27,7 @@ import com.example.entites.Enployee;
 @SpringBootApplication
 public class TestserverApplication {
 	private static Connection connection;
-	private static String nameDataBase="p";
+	private static String nameDataBase="passeport";
 	public static void main(String[] args) throws IOException {
 		//	creatDataBase("mydatabasetest");
 		updatApplicationProperties(nameDataBase); 
@@ -168,7 +168,8 @@ for (int i = 0; i < 20; i++) {
 		return 0;
 	}
 
-	private static int showDatabase(){
+	public static ArrayList<String> showDatabase(){
+		ArrayList<String> listData=new ArrayList<String>();
 		Statement stmt;
 		try {
 			stmt = connection.createStatement();
@@ -177,14 +178,14 @@ for (int i = 0; i < 20; i++) {
 				String database = rs.getString(1);
 				if (database.startsWith("model_")) {
 					System.out.println(database + "\n");
-
+					listData.add(database);
 				}
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return 0;
+		return listData;
 
 	}
 	static String updatApplicationProperties(String databaseName) throws IOException{

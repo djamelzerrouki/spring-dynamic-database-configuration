@@ -11,5 +11,5 @@ extends JpaRepository<Enployee,Long>{
 	
  public List<Enployee> findByName(String name);
  public List<Enployee> findAll();
-
+ 
 }
