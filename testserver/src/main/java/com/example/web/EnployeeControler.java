@@ -1,5 +1,6 @@
 package com.example.web;
 
+import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 
@@ -29,13 +30,15 @@ public class EnployeeControler {
 	}
 	@RequestMapping(value="/formAdd" ,method=RequestMethod.GET)
 	public String formaddEnployee(Model model) {
+		List<Enployee> list = er.findAll();
 	       model.addAttribute("enployee",new Enployee());
+	       model.addAttribute("enployees",list);
  	return "addenployee";
  }
 	@RequestMapping(value="/saveEnployee" ,method=RequestMethod.POST)
 	public String save(Enployee ep) {
         er.save(ep);
-		return "redirect:Index";
+		return "redirect:formAdd";
  }	
 	/*@RequestMapping(value="http://localhost:5000" ,method=RequestMethod.POST)
 	public String bpml() {
@@ -49,6 +52,20 @@ public class EnployeeControler {
 
 
  		return "home";
+	}
+	@RequestMapping(value="/model")
+	public String model(Model model)  {
+	
+ try {
+	TestserverApplication.configModale("bbbbbbbbbbbb");
+System.out.println("bbbbb");
+ } catch (IOException e) {
+	// TODO Auto-generated catch block
+	System.out.println(e);
+}
+
+
+ 		return "work";
 	}
 	
 	

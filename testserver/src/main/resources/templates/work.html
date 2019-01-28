@@ -4,6 +4,7 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<html xmlns:th="http://www.thymeleaf.org">
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -39,22 +40,35 @@
 	<meta name="twitter:card" content="" />
 
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="shortcut icon" href="../static/favicon.ico"  	  />
 
-	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
-	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-	
+<link
+	href='https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic,700'
+	rel='stylesheet' type='text/css' />
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700'
+	rel='stylesheet' type='text/css' />
+
+
+<link rel="stylesheet" type="text/css"
+	href="../static/css/bootstrap.min.css"
+	th:href="@{/css/bootstrap.min.css}" />
 	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet"  type="text/css" href="../static/css/animate.css"
+	th:href="@{/css/animate.css}"/>
 	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/icomoon.css"
+		th:href="@{/css/icomoon.css}"/>
 	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css" 
+	th:href="@{/css/bootstrap.css}"/>
 	<!-- Owl Carousel -->
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/owl.carousel.min.css"
+		th:href="@{/css/owl.carousel.min.css}"/>
+	<link rel="stylesheet" type="text/css" href="../static/css/owl.theme.default.min.css"
+	th:href="@{/css/owl.theme.default.min.css}"/>
 	<!-- Theme style  -->
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/style.css" 	
+	th:href="@{/css/style.css}" />
 
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
@@ -70,11 +84,17 @@
 		<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
 		<aside id="fh5co-aside" role="complementary" class="border js-fullheight">
 
-			<h1 id="fh5co-logo"><a href="index.html"><img src="images/logo.png" alt="Free HTML5 Bootstrap Website Template"></a></h1>
+			<h1 id="fh5co-logo">
+				<a href="home"><img src="../static/images/logo.png"
+				th:src="@{/images/logo.png}"
+					alt="Free HTML5 Bootstrap Website Template"></a>
+			</h1>
 			<nav id="fh5co-main-menu" role="navigation">
 				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="portfolio.html">Portfolio</a></li>
+					<li class="fh5co-active"><a href="home">Home</a></li>
+					<li><a href="formAdd">save Enployee</a></li>
+					<li><a href="http://localhost:5000/">Bpms</a></li>
+
 					<li><a href="about.html">About</a></li>
 					<li><a href="contact.html">Contact</a></li>
 				</ul>

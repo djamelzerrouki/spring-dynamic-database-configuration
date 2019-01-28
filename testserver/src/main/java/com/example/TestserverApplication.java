@@ -27,13 +27,10 @@ import com.example.entites.Enployee;
 @SpringBootApplication
 public class TestserverApplication {
 	private static Connection connection;
-	private static String nameDataBase="passeport";
+	private static String nameDataBase="aaaaaaaaaaaaaaaaa";
 	public static void main(String[] args) throws IOException {
 		//	creatDataBase("mydatabasetest");
-		updatApplicationProperties(nameDataBase); 
-
-		creatDataBase(nameDataBase);
-		showDatabase();
+		configModale(nameDataBase);
 
 		System.out.println("Base  mytabl1 created  ...");
 
@@ -82,6 +79,12 @@ for (int i = 0; i < 20; i++) {
 	    Persistence emf = (Persistence) Persistence.createEntityManagerFactory("org.hibernate.tutorial.jpa");
 	    EntityManager em = ((EntityManagerFactory) emf).createEntityManager();
 	}*/
+
+	public static void configModale(String nameDataBase) throws IOException {
+		updatApplicationProperties(nameDataBase); 
+		creatDataBase(nameDataBase);
+		showDatabase();
+	}
 
 	public static void creatEntity(String  name,int index) throws IOException {
 
@@ -159,7 +162,7 @@ for (int i = 0; i < 20; i++) {
 			Statement statement = connection.createStatement();
 			statement.executeUpdate(sql);
 			statement.close();
-			JOptionPane.showMessageDialog(null,databaseName + " Database has been created successfully", "System Message", JOptionPane.INFORMATION_MESSAGE);
+		//	JOptionPane.showMessageDialog(null,databaseName + " Database has been created successfully", "System Message", JOptionPane.INFORMATION_MESSAGE);
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -188,7 +191,7 @@ for (int i = 0; i < 20; i++) {
 		return listData;
 
 	}
-	static String updatApplicationProperties(String databaseName) throws IOException{
+	public static String updatApplicationProperties(String databaseName) throws IOException{
 		String text;
 
 		StringBuffer buffer= new StringBuffer() ;
@@ -197,7 +200,7 @@ for (int i = 0; i < 20; i++) {
 		buffer.append("spring.datasource.username=root\r\n" + 
 				"spring.datasource.password=root\r\n" + 
 				"spring.datasource.driverClassName=com.mysql.jdbc.Driver\r\n" + 
-				"spring.jpa.hibernate.ddl-auto=create-drop"
+				"spring.jpa.hibernate.ddl-auto=update"
 				);  
 
 

@@ -24,6 +24,7 @@ public class Enployee implements Serializable{
 	}
 	private String name;
 	private String password;
+	private String tlphon;
 	private Long servicid;
 	@DateTimeFormat(pattern="yyyy-MM-dd")   
     private Date datenes;
@@ -50,6 +51,12 @@ public class Enployee implements Serializable{
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public String getTlphon() {
+		return tlphon;
+	}
+	public void setTlphon(String tlphon) {
+		this.tlphon = tlphon;
 	}
 	public Long getServicid() {
 		return servicid;
