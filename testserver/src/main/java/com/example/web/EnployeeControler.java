@@ -29,12 +29,21 @@ public class EnployeeControler {
 		return "enployee";
 	}
 	@RequestMapping(value="/formAdd" ,method=RequestMethod.GET)
-	public String formaddEnployee(Model model) {
+	public String formAddEnployee(Model model) {
 		List<Enployee> list = er.findAll();
 	       model.addAttribute("enployee",new Enployee());
 	       model.addAttribute("enployees",list);
  	return "addenployee";
  }
+	
+	@RequestMapping(value="/addmodele" ,method=RequestMethod.GET)
+	public String formAddModele(Model model) {
+		List<Enployee> list = er.findAll();
+ 	       model.addAttribute("enployee",new Enployee());
+	       model.addAttribute("enployees",list);
+ 	return "redirect:creatmodel";
+ }
+	
 	@RequestMapping(value="/saveEnployee" ,method=RequestMethod.POST)
 	public String save(Enployee ep) {
         er.save(ep);
