@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.Random;
@@ -55,7 +56,7 @@ public class TestserverApplication {
 		EnployeeRepository er=  ctx.getBean(EnployeeRepository.class);
 for (int i = 0; i < 20; i++) {
 	long l=new Long(i);
-	er.save( new Enployee("Enployee"+i,((i*i)^i)+"", l,new Date()));	 
+	er.save( new Enployee("Enployee"+i,((i*i)^i)+"","0669706401", l,new Date()));	 
 	
 }
 	 	 
@@ -81,6 +82,9 @@ for (int i = 0; i < 20; i++) {
 	}*/
 
 	public static void configModale(String nameDataBase) throws IOException {
+		if(nameDataBase!=null) {
+			nameDataBase =nameDataBase.replaceAll("\\s","");}
+		
 		updatApplicationProperties(nameDataBase); 
 		creatDataBase(nameDataBase);
 		showDatabase();
@@ -150,7 +154,7 @@ for (int i = 0; i < 20; i++) {
 
 	public static int creatDataBase(String databaseName){
 		try {
-			// String databaseName = "d";
+ 			// String databaseName = "d";
 			String userName = "root";
 			String password = "root";
 

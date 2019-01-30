@@ -27,4 +27,5 @@
 <fullyQualifiedTypeName name="org.springframework.format.annotation.DateTimeFormat"/>
 <fullyQualifiedTypeName name="com.example.TestserverApplication"/>
 <fullyQualifiedTypeName name="java.net.HttpURLConnection"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestController"/>
 </qualifiedTypeNameHistroy>

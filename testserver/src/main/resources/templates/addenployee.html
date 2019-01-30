@@ -129,25 +129,29 @@
 									th:object="${enployee}">
 
 									<div class="form-group">
-										<label class="control-label">Nom:</label> <input type="text"
-											th:field="*{name}" class="form-control" required/> <span></span>
+<!-- 										<label class="control-label">Nom:</label>  -->
+										<input type="text"
+											th:field="*{name}" class="form-control" placeholder="Nom" required/> <span></span>
 									</div>
 									<div class="form-group">
-										<label class="control-label">Password:</label> <input
-											type="password" th:field="*{password}" class="form-control" required/>
+<!-- 										<label class="control-label">Password:</label>  -->
+										<input
+											type="password" th:field="*{password}" class="form-control" placeholder="Mot de Passe" required/>
 										<span></span>
 									</div>
 									<div class="form-group">
-										<label class="control-label">N° de tlphon :</label> <input
-											type="number" th:field="*{tlphon}" class="form-control" required/> <span></span>
+<!-- 										<label class="control-label">N° de tlphon :</label> -->
+										 <input	type="number" th:field="*{tlphon}" class="form-control" placeholder="N° de tlphone" required/> <span></span>
 									</div>
 									<div class="form-group">
-										<label class="control-label">Date:</label> <input type="date"
-											th:field="*{datenes}" class="form-control" required/> <span></span>
+<!-- 										<label class="control-label">Date:</label>  -->
+										<input type="date"
+											th:field="*{datenes}" class="form-control" placeholder="Date" required/> <span></span>
 									</div>
 									<div class="form-group">
-										<label class="control-label">Code de Service :</label> <input
-											type="number" th:field="*{servicid}" class="form-control" required/>
+<!-- 										<label class="control-label">Code de Service :</label>  -->
+										<input
+											type="number" th:field="*{servicid}" class="form-control" placeholder="Code de Service" required/>
 										<span></span>
 									</div>
 									<div>

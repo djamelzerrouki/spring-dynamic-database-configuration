@@ -15,10 +15,11 @@ public class Enployee implements Serializable{
     public Enployee() {
 		super();
 	}
-	public Enployee(String name, String password, Long servicid, Date datenes) {
+	public Enployee(String name, String password,String tlphon, Long servicid, Date datenes) {
 		super();
 		this.name = name;
 		this.password = password;
+		this.tlphon=tlphon;
 		this.servicid = servicid;
 		this.datenes = datenes;
 	}
