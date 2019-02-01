@@ -1,21 +1,16 @@
 package com.example.web;
 
 import java.io.IOException;
-import java.util.Date;
+import java.sql.SQLException;
 import java.util.List;
-
-import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.example.TestserverApplication;
 import com.example.dao.EnployeeRepository;
@@ -42,9 +37,17 @@ public class ModelControler {
  }
 	 
 	@PostMapping("/postEndpoint" )
-	public String pidUserSubmit(@RequestParam(name = "namemodel") String namemodel) throws IOException {
-	       TestserverApplication.configModale(namemodel);
+	public String pidUserSubmit(@RequestParam(name = "namemodel") String namemodel) throws IOException, SQLException {
+	//	ArrayList <String> list=TestserverApplication.showDatabase() ;
+		if(namemodel!=null) {
+			namemodel =namemodel.replaceAll("\\s","");}
+		TestserverApplication.configModale(namemodel);
+		TestserverApplication.creatEntity("dossier",5);
 
+		TestserverApplication.createNewTable(namemodel,5);
+		          //  TestserverApplication .restart();
+ 
+		//TestserverApplication.main(TestserverApplication.args);
 		return "creatTable";
 	}
 	

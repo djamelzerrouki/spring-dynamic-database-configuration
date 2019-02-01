@@ -16,7 +16,6 @@
 <fullyQualifiedTypeName name="com.example.entites.Enployee"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.sql.ResultSet"/>
 <fullyQualifiedTypeName name="com.example.dao.EnployeeRepository"/>
 <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
@@ -28,4 +27,12 @@
 <fullyQualifiedTypeName name="com.example.TestserverApplication"/>
 <fullyQualifiedTypeName name="java.net.HttpURLConnection"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestController"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="org.springframework.boot.builder.SpringApplicationBuilder"/>
+<fullyQualifiedTypeName name="org.springframework.boot.autoconfigure.EnableAutoConfiguration"/>
+<fullyQualifiedTypeName name="org.springframework.context.ConfigurableApplicationContext"/>
+<fullyQualifiedTypeName name="net.bytebuddy.ByteBuddy"/>
+<fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility"/>
+<fullyQualifiedTypeName name="net.bytebuddy.implementation.FieldAccessor"/>
+<fullyQualifiedTypeName name="net.bytebuddy.dynamic.loading.ClassLoadingStrategy"/>
 </qualifiedTypeNameHistroy>

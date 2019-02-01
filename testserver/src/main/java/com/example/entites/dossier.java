@@ -7,7 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 @Entity
-public class mytabl2 {
+public class dossier {
 @Id
 @GeneratedValue(strategy = GenerationType.AUTO)
  @Column(name="id")
@@ -23,5 +23,13 @@ public String getch2() { ;
 private String ch3 ;
 public String getch3() { ;
  return ch3; 
+}
+private String ch4 ;
+public String getch4() { ;
+ return ch4; 
+}
+private String ch5 ;
+public String getch5() { ;
+ return ch5; 
 }
 }
