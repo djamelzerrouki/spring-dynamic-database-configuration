@@ -26,11 +26,7 @@ public class ModelControler {
 	
 	@RequestMapping(value="/addModele" ,method=RequestMethod.GET)
 	public String formAddModele(Model model) throws IOException {
-		List<Enployee> list = er.findAll();
-		Modele m=new Modele();
-	       model.addAttribute("model",m);
-	       
-	       TestserverApplication.configModale(m.getNamemodel());
+ 
 	       model.addAttribute("modeldata",TestserverApplication.showDatabase());
 
  	return "creatmodel";
@@ -40,15 +36,18 @@ public class ModelControler {
 	public String pidUserSubmit(@RequestParam(name = "namemodel") String namemodel) throws IOException, SQLException {
 	//	ArrayList <String> list=TestserverApplication.showDatabase() ;
 		if(namemodel!=null) {
-			namemodel =namemodel.replaceAll("\\s","");}
+			namemodel =namemodel.replaceAll("\\s","");
 		TestserverApplication.configModale(namemodel);
-		TestserverApplication.creatEntity("dossier",5);
-
+		TestserverApplication.creatEntity("Dossier",5);
 		TestserverApplication.createNewTable(namemodel,5);
 		          //  TestserverApplication .restart();
  
 		//TestserverApplication.main(TestserverApplication.args);
-		return "creatTable";
+		return "creatTable";}
+		else {
+			return "redirect:addModele";
+			
+		}
 	}
 	
 	//addTable
@@ -80,13 +79,9 @@ public class ModelControler {
 	@RequestMapping(value="/model")
 	public String model(Model model)  {
 	
- try {
-	TestserverApplication.configModale("bbbbbbbbbbbb");
-System.out.println("bbbbb");
- } catch (IOException e) {
-	// TODO Auto-generated catch block
-	System.out.println(e);
-}
+ 
+	//TestserverApplication.configModale("bbbbbbbbbbbb");
+  
 
 
  		return "work";

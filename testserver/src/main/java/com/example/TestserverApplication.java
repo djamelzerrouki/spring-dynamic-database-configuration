@@ -19,7 +19,9 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
+import com.example.dao.DossierRepository;
 import com.example.dao.EnployeeRepository;
+import com.example.entites.Dossier;
 import com.example.entites.Enployee;
 
 import net.bytebuddy.ByteBuddy;
@@ -61,7 +63,7 @@ public class TestserverApplication {
 		TestserverApplication.args = args;
 
 		//	creatDataBase("mydatabasetest");
-		configModale(nameDataBase);
+	//	configModale(nameDataBase);
 		//new TestserverApplication(). create();
 		System.out.println("Base  mytabl1 created  ...");
 
@@ -88,18 +90,33 @@ public class TestserverApplication {
 			long l=new Long(i);
 			er.save( new Enployee("Enployee"+i,((i*i)^i)+"","0669706401", l,new Date()));	 
 
+
 		}
-
-
-
 		//List<Enployee> list =er.findByName("djamel");
 		List<Enployee> list =er.findAll();
+
+		DossierRepository dr =context.getBean(DossierRepository.class);
+
+		for (int i = 0; i < 20; i++) {
+			Dossier d=new Dossier();
+		 	d.setch1("aa");
+		 	d.setch2("aa");
+		 	d.setch3("aa");
+		 	d.setch4("aa");
+		 	d.setch5("aa");
+
+		 	dr.save(d);	 
+		}
+		List<Dossier> list2 =dr.findAll();
 
 		list.forEach(enpl->{
 			System.out.println("#### :"+enpl.getId()+" NAME: "+enpl.getName()+" DATE: "
 					+ ""+enpl.getDatenes());
 		} );
 
+		list2.forEach(enpl->{
+			System.out.println("#### :"+enpl.getch1() );
+		} );
 
 	}
 	/*public static void initEntityManager() throws SQLException {
@@ -151,6 +168,12 @@ public class TestserverApplication {
 			buffer.append ("private String ch"+i+" ;\n");
 			buffer.append ("public String getch"+i+"() { ;\n");
 			buffer.append (" return ch"+i+"; \n");
+			buffer.append ("}\n");
+
+		}
+		for (int i = 1; i < index+1; i++) {
+ 			buffer.append ("public void setch"+i+"(String ch"+i+") { ;\n");
+			buffer.append ("  this.ch"+i+"=ch"+i+" ; \n");
 			buffer.append ("}\n");
 
 		}
@@ -216,7 +239,7 @@ public class TestserverApplication {
 		//DROP TABLE IF EXISTS table_name;
 		String sql1="DROP TABLE IF EXISTS  dossier ; ";
 		bfr.append("CREATE TABLE  IF NOT EXISTS dossier (");
-		bfr.append("id int NOT NULL AUTO_INCREMENT,");
+		bfr.append("id bigint NOT NULL AUTO_INCREMENT,");
 		for (int i = 1; i <= index; i++) {
 			bfr.append("ch"+i+" varchar(255) NOT NULL,");
 
@@ -240,9 +263,15 @@ public class TestserverApplication {
 
 	public static ArrayList<String> showDatabase(){
 		ArrayList<String> listData=new ArrayList<String>();
-		Statement stmt;
+		// String databaseName = "d";
+		String userName = "root";
+		String password = "root";
+
+		String url = "jdbc:mysql://localhost:3306/mysql?zeroDateTimeBehavior=convertToNull";
 		try {
-			stmt = connection.createStatement();
+			connection = DriverManager.getConnection(url,userName, password);
+
+			Statement stmt = connection.createStatement();
 			ResultSet rs = stmt.executeQuery("SHOW DATABASES;");
 			while (rs.next()) {
 				String database = rs.getString(1);
