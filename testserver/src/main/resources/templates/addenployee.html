@@ -61,7 +61,12 @@
 <!-- Theme style  -->
 <link rel="stylesheet" type="text/css" href="../static/css/style.css"
 	th:href="@{/css/style.css}" />
-
+	<link rel="stylesheet" type="text/css"
+		  href="../static/css/font-awesome.main.css"
+		  th:href="@{/css/font-awesome.main.css}" />
+	<link rel="stylesheet" type="text/css"
+		  href="../static/css/font-awesome.css"
+		  th:href="@{/css/font-awesome.css}" />
 <!-- Modernizr JS -->
 <script src="js/modernizr-2.6.2.min.js"></script>
 <!-- FOR IE9 below -->
@@ -69,6 +74,38 @@
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
 
+<style>
+body {margin: 0;}
+
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul.topnav li a:hover:not(.active) {background-color: #111;}
+
+ul.topnav li a.active {background-color: #4CAF50;}
+
+ul.topnav li.right {float: right;}
+
+@media screen and (max-width: 600px) {
+  ul.topnav li.right, 
+  ul.topnav li {float: none;}
+}
+</style>
 </head>
 <body>
 	<div id="fh5co-page">
@@ -77,9 +114,9 @@
 			class="border js-fullheight">
 
 			<h1 id="fh5co-logo">
-				<a href="home"><img src="../static/images/logo.png"
-					th:src="@{/images/logo.png}"
-					alt="Free HTML5 Bootstrap Website Template"></a>
+				<a href="home"><img src="../static/images/Preloader.gif"
+									th:src="@{/images/Preloader.gif}"
+									alt="Free HTML5 Bootstrap Website Template"></a>
 			</h1>
 			<nav id="fh5co-main-menu" role="navigation">
 				<ul>
@@ -107,9 +144,30 @@
 				</ul>
 			</div>
 		</aside>
+		
+		
 
 		<div id="fh5co-main">
 
+
+<ul class="topnav">
+  <li><a class="active" href="#home">Home</a></li>
+  <li><a href="Employe">Employe</a></li>
+    <li><a href="Service">Service</a></li>
+     <li><a href="Dossier">Dossier</a></li>
+       <li><a href="Historique">Historique</a></li>
+  
+ 
+  <li><a href="#contact">Contact</a></li>
+  <li class="right"><a href="#about">Modele</a></li>
+</ul>
+
+<div style="padding:0 16px;">
+  <h2>Responsive Topnav Example</h2>
+  <p>This example use media queries to stack the topnav vertically when the screen size is 600px or less.</p>
+  <p>You will learn more about media queries and responsive web design later in our CSS Tutorial.</p>
+  <h4>Resize the browser window to see the effect.</h4>
+</div>
 			<div class="fh5co-narrow-content">
 				<h1 class="fh5co-heading animate-box"
 					data-animate-effect="fadeInLeft">Enployee</h1>
@@ -131,7 +189,7 @@
 									<div class="form-group">
 <!-- 										<label class="control-label">Nom:</label>  -->
 										<input type="text"
-											th:field="*{name}" class="form-control" placeholder="Nom" required/> <span></span>
+											th:field="*{name}" class="form-control" placeholder="Nom"  required  pattern="[A-Za-z0-9]+"  /> <span></span>
 									</div>
 									<div class="form-group">
 <!-- 										<label class="control-label">Password:</label>  -->
@@ -172,7 +230,7 @@
 
 
 
-
+			<div class="col-md-6">
 			<div class="panel-body">
 
 				<table class="table table-striped">
@@ -194,19 +252,28 @@
 							<td th:text="${e.tlphon}"></td>
 							<td th:text="${e.servicid}"></td>
 							<td th:text="${e.datenes}"></td>
+							<td >
+							<a> <i class="fa fa-edit" style="font-size:21 px;color:blue;"></i></a>
+							<a> <i class="fa fa-trash" style="font-size:21 px;color:red;"></i></a>
+							</td>
+
 						</tr>
 					</tbody>
 				</table>
 			</div>
 
-
+			</div>
 			<div class="row animate-box" data-animate-effect="fadeInLeft">
 				<div class="col-md-4 col-sm-4 col-xs-4 text-center">
-					<a href="#"><span>Ajouter Nouveau Enployee </span> <i
+					<a href="#"><span>Ajouter Nouveau Srervice </span> <i
 						class="icon-long-arrow-right"></i></a>
 				</div>
 			</div>
-		</div>
+		
+		
+			 		
+		
+	</div>
 	</div>
 
 

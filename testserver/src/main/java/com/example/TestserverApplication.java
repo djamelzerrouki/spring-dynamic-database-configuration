@@ -3,6 +3,8 @@ package com.example;
 
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.Connection;
@@ -11,18 +13,21 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+ import java.util.List;
+import java.util.Properties;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import com.example.dao.DossierRepository;
-import com.example.dao.EnployeeRepository;
+import com.example.dao.EmployeRepository;
+import com.example.dao.ServiceRepository;
 import com.example.entites.Dossier;
-import com.example.entites.Enployee;
+import com.example.entites.Employe;
+import com.example.entites.Service;
 
 import net.bytebuddy.ByteBuddy;
 import net.bytebuddy.dynamic.loading.ClassLoadingStrategy;
@@ -30,21 +35,25 @@ import net.bytebuddy.implementation.FieldAccessor;
 
 @SpringBootApplication
 @EnableAutoConfiguration
+ 
 public class TestserverApplication {
 	public static String[] args;
 	private static ConfigurableApplicationContext context;
 	private static Connection connection;
-	private static String nameDataBase="aaaaaaaaaaaaaaaaa";
-	// restart Spring 
+ 	// restart Spring 
 	public static void restart() {
 		// close previous context
-		context.close();
-
-		// and build new one
+	 context.close();
+ 		// and build new one
 		TestserverApplication.context = SpringApplication.run(TestserverApplication.class, args);
 
 	}
 
+	public static void changeDataSource(String nameDB){
+		context.refresh();
+		DriverManagerDataSource databaseSource = (DriverManagerDataSource)context.getBean(nameDB);
+		databaseSource.getUsername();	
+	}
 
 	public   void create(){
 		Class<?> type = new ByteBuddy()
@@ -61,62 +70,50 @@ public class TestserverApplication {
 	}
 	public static void main(String[] args) throws IOException {
 		TestserverApplication.args = args;
-
-		//	creatDataBase("mydatabasetest");
-	//	configModale(nameDataBase);
-		//new TestserverApplication(). create();
-		System.out.println("Base  mytabl1 created  ...");
-
-		/*
-		creatEntity("mytabl1",5);
-		System.out.println("Table mytabl1 created  ...");
-
-		creatEntity("mytabl2",3);
-		System.out.println("Table mytabl4 created  ...");
-
-		creatEntity("mytabl3",4);	
-		System.out.println("Table mytabl3 created  ...");
-
-		 */
-		System.out.println("welcom to Java EE  ...");
+   System.out.println("welcom to Java EE  ...");
 		context=SpringApplication.run(TestserverApplication.class, args);
 		System.out.println("welcom to Spring Boot ... ");
 		System.out.println("welcom to Spring Data ...");
-		//	public Enployee(String name, String pasword, Long servicid, Date datenes) {
-
-
-		EnployeeRepository er=  context.getBean(EnployeeRepository.class);
-		for (int i = 0; i < 20; i++) {
-			long l=new Long(i);
-			er.save( new Enployee("Enployee"+i,((i*i)^i)+"","0669706401", l,new Date()));	 
-
-
-		}
-		//List<Enployee> list =er.findByName("djamel");
-		List<Enployee> list =er.findAll();
-
+		 	
+		ServiceRepository sr=  context.getBean(ServiceRepository.class);
 		DossierRepository dr =context.getBean(DossierRepository.class);
+		EmployeRepository er=  context.getBean(EmployeRepository.class);
 
-		for (int i = 0; i < 20; i++) {
-			Dossier d=new Dossier();
-		 	d.setch1("aa");
-		 	d.setch2("aa");
-		 	d.setch3("aa");
-		 	d.setch4("aa");
-		 	d.setch5("aa");
+		/*
+ 	for (int i = 1; i < 10; i++) {
+			long l=new Long(i);
+			er.save( new Employe("Employe"+i,((i*i)^i)+"","0669706401", l,new Date()));	 
 
-		 	dr.save(d);	 
+
 		}
+		//List<Employe> list =er.findByName("djamel");
+
+//
+//		for (int i = 1; i < 10; i++) {
+//			Dossier d=new Dossier();
+//		 	d.setch1("a1");
+//		 	d.setch2("a2");
+//		 	d.setch3("a3");
+//		 	d.setch4("a4");
+//		 	d.setch5("a5");
+//
+//		 	dr.save(d);	 
+//		}
+		for (int i = 1; i < 5; i++) {
+			long l=new Long(i);
+			sr.save( new Service("S"+i,"M"+i));	 
+		} 
+  
+ */
+		List<Employe> list =er.findAll();
 		List<Dossier> list2 =dr.findAll();
+		List<Service> list3 =sr.findAll();
 
-		list.forEach(enpl->{
-			System.out.println("#### :"+enpl.getId()+" NAME: "+enpl.getName()+" DATE: "
-					+ ""+enpl.getDatenes());
-		} );
+		list.forEach(System.out::println);
+		 
+		list2.forEach(System.out::println);
+		list3.forEach(System.out::println);
 
-		list2.forEach(enpl->{
-			System.out.println("#### :"+enpl.getch1() );
-		} );
 
 	}
 	/*public static void initEntityManager() throws SQLException {
@@ -155,8 +152,27 @@ public class TestserverApplication {
 		buffer.append ("@GeneratedValue(strategy = GenerationType.AUTO)\n");
 		buffer.append (" @Column(name=\"id\")\n");
 		buffer.append ("private Long id ;\n");
-
-
+buffer.append("private String nom ;\r\n" + 
+		"private String prenom ;\r\n" + 
+		"private String tlphon ;\r\n" + 
+		"public String getNom() {\r\n" + 
+		"	return nom;\r\n" + 
+		"}\r\n" + 
+		"public void setNom(String nom) {\r\n" + 
+		"	this.nom = nom;\r\n" + 
+		"}\r\n" + 
+		"public String getPrenom() {\r\n" + 
+		"	return prenom;\r\n" + 
+		"}\r\n" + 
+		"public void setPrenom(String prenom) {\r\n" + 
+		"	this.prenom = prenom;\r\n" + 
+		"}\r\n" + 
+		"public String getTlphon() {\r\n" + 
+		"	return tlphon;\r\n" + 
+		"}\r\n" + 
+		"public void setTlphon(String tlphon) {\r\n" + 
+		"	this.tlphon = tlphon;\r\n" + 
+		"}");
 
 		/*     public String getName() {
         return name;
@@ -215,6 +231,28 @@ public class TestserverApplication {
 			connection = DriverManager.getConnection(url,userName, password);
 
 			String sql = "CREATE DATABASE IF NOT EXISTS model_" + databaseName;
+
+			Statement statement = connection.createStatement();
+			statement.executeUpdate(sql);
+			statement.close();
+			//	JOptionPane.showMessageDialog(null,databaseName + " Database has been created successfully", "System Message", JOptionPane.INFORMATION_MESSAGE);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return 0;
+	}
+	public static int dropDataBase(String databaseName){
+		try {
+			// String databaseName = "d";
+			String userName = "root";
+			String password = "root";
+
+			String url = "jdbc:mysql://localhost:3306/mysql?zeroDateTimeBehavior=convertToNull";
+			connection = DriverManager.getConnection(url,userName, password);
+
+			String sql = "DROP DATABASE IF  EXISTS model_" + databaseName;
 
 			Statement statement = connection.createStatement();
 			statement.executeUpdate(sql);
@@ -287,6 +325,58 @@ public class TestserverApplication {
 		return listData;
 
 	}
+	
+	///mysql?zeroDateTimeBehavior=convertToNull
+	public static String updateInitialApplicationProperties() throws IOException{
+		String text;
+
+		StringBuffer buffer= new StringBuffer() ;
+
+		buffer.append ("spring.datasource.url=jdbc:mysql://localhost:3306/mysql?zeroDateTimeBehavior=convertToNull\r\n");
+		buffer.append("spring.datasource.username=root\r\n" + 
+				"spring.datasource.password=root\r\n" + 
+				"spring.datasource.driverClassName=com.mysql.jdbc.Driver\r\n" + 
+				"spring.jpa.hibernate.ddl-auto=update"
+				);  
+
+
+		text=buffer.toString();
+		BufferedWriter output = null;
+		try {
+			File file = new File("../testserver/src/main/resources/application.properties");
+			output = new BufferedWriter(new FileWriter(file));
+			output.write(text);
+			output.flush();
+		} catch ( IOException e ) {
+			e.printStackTrace();
+		} finally {
+			if ( output != null ) {
+				output.close();
+			}
+		}
+
+
+
+		return null;	
+	}
+	
+	public static String updatApplicationProperties2(String databaseName) throws IOException{
+
+	 
+	  // reading the existing properties
+FileInputStream in = new FileInputStream("../testserver/src/main/resources/application.properties");
+Properties props = new Properties();
+props.load(in);
+in.close();
+// writing back the properties after updation
+FileOutputStream out = new FileOutputStream("../testserver/src/main/resources/application.properties");
+props.setProperty("spring.datasource.url", "jdbc::mysql:://localhost:3306/model_aaabbbccccc");
+props.store(out, null);
+out.close();
+	  
+return null;	
+}
+
 	public static String updatApplicationProperties(String databaseName) throws IOException{
 		String text;
 
@@ -315,8 +405,7 @@ public class TestserverApplication {
 			}
 		}
 
-
-
+		
 		return null;	
 	}
 

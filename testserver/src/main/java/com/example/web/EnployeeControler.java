@@ -13,39 +13,39 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.example.TestserverApplication;
-import com.example.dao.EnployeeRepository;
-import com.example.entites.Enployee;
+import com.example.dao.EmployeRepository;
+import com.example.entites.Employe;
 
 
 @Controller 
-@RequestMapping(value="/Enployee")
+@RequestMapping(value="/Employe")
 public class EnployeeControler {
 @Autowired
-	EnployeeRepository er;
+	EmployeRepository er;
 	@RequestMapping(value="/Index")
 	public String Index(Model model) {
-		List<Enployee> list = er.findAll();
+		List<Employe> list = er.findAll();
        model.addAttribute("enployees",list);
 		return "enployee";
 	}
 	@RequestMapping(value="/formAdd" ,method=RequestMethod.GET)
 	public String formAddEnployee(Model model) {
-		List<Enployee> list = er.findAll();
-	       model.addAttribute("enployee",new Enployee());
+		List<Employe> list = er.findAll();
+	       model.addAttribute("enployee",new Employe());
 	       model.addAttribute("enployees",list);
  	return "addenployee";
  }
 	
 	@RequestMapping(value="/addmodele" ,method=RequestMethod.GET)
 	public String formAddModele(Model model) {
-		List<Enployee> list = er.findAll();
- 	       model.addAttribute("enployee",new Enployee());
+		List<Employe> list = er.findAll();
+ 	       model.addAttribute("enployee",new Employe());
 	       model.addAttribute("enployees",list);
  	return "redirect:creatmodel";
  }
 	
 	@RequestMapping(value="/saveEnployee" ,method=RequestMethod.POST)
-	public String save(Enployee ep) {
+	public String save(Employe ep) {
         er.save(ep);
 		return "redirect:formAdd";
  }	

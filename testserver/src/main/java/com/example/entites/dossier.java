@@ -12,7 +12,27 @@ public class Dossier {
 @GeneratedValue(strategy = GenerationType.AUTO)
  @Column(name="id")
 private Long id ;
-private String ch1 ;
+private String nom ;
+private String prenom ;
+private String tlphon ;
+public String getNom() {
+	return nom;
+}
+public void setNom(String nom) {
+	this.nom = nom;
+}
+public String getPrenom() {
+	return prenom;
+}
+public void setPrenom(String prenom) {
+	this.prenom = prenom;
+}
+public String getTlphon() {
+	return tlphon;
+}
+public void setTlphon(String tlphon) {
+	this.tlphon = tlphon;
+}private String ch1 ;
 public String getch1() { ;
  return ch1; 
 }

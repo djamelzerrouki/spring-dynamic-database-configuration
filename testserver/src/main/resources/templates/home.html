@@ -79,8 +79,8 @@
 			class="border js-fullheight">
 
 			<h1 id="fh5co-logo">
-				<a href="home"><img src="../static/images/logo.png"
-					th:src="@{/images/logo.png}"
+				<a href="home"><img src="../static/images/Preloader.gif"
+					th:src="@{/images/Preloader.gif}"
 					alt="Free HTML5 Bootstrap Website Template"></a>
 			</h1>
 			<nav id="fh5co-main-menu" role="navigation">
@@ -130,11 +130,11 @@
 				<div class="row animate-box" data-animate-effect="fadeInLeft">
 					<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item"
 						th:each="e:${modeldata}">
-						<a href="model"> <img src="../static/images/model.png"
+						<a th:href="@{'model?m=' + ${e}}"> <img src="../static/images/model.png"
 							th:src="@{/images/model.png}"
 							alt="Free HTML5 Website Template by FreeHTML5.co"
 							class="img-responsive" />
-							<h3 class="fh5co-work-title" th:text="${e}" />
+							<h3 id="namedata" name="namedata" class="fh5co-work-title" th:text="${e}" value="${e}" />
 							<p>Date, Branding</p>
 						</a>
 					</div>

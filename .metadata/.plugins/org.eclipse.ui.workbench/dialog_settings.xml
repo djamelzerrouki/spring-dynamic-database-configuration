@@ -22,4 +22,6 @@
 			<item value="org.eclipse.wst.web.ui"/>
 		</list>
 	</section>
+	<section name="ImportExportAction">
+	</section>
 </section>
