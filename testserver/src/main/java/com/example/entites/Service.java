@@ -1,14 +1,21 @@
 package com.example.entites;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
  
 @Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 public class Service {
  
     
@@ -18,38 +25,7 @@ public class Service {
     private long id;
     private String name;
     
-     public long getId() {
-        return id;
-    }
-    public Service() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	public Service(long id, String name ) {
-		super();
-		this.id = id;
-		this.name = name;
- 	}
  
-	 
-	public Service( String name, String typemodel) {
-		super();
- 		this.name = name;
- 	}
-	 
-	public void setId(long id) {
-        this.id = id;
-    }
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-	@Override
-	public String toString() {
-		return "Service [id=" + id + ", name=" + name + "]";
-	}
      
    
      

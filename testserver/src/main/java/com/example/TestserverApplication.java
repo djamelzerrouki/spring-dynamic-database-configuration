@@ -134,73 +134,39 @@ public class TestserverApplication {
 		showDatabase();
 	}
 
-	public static void creatEntity(String  name,int index) throws IOException {
-
-		String text = "Hello world";
+	public static void creatEntity(String  name, int index) throws IOException {
+String text = "Hello world";
 		StringBuffer buffer= new StringBuffer() ;
 		buffer.append ("package com.example.entites;\r\n" + 
-				"import java.util.Date;\r\n" + 
-				"\r\n" + 
+				" \r\n" + 
 				"import javax.persistence.Column;\r\n" + 
 				"import javax.persistence.Entity;\r\n" + 
 				"import javax.persistence.GeneratedValue;\r\n" + 
 				"import javax.persistence.GenerationType;\r\n" + 
-				"import javax.persistence.Id;\n");
-		buffer.append ("@Entity\n");
-		buffer.append ("public class "+ name +" {\n");
-		buffer.append ("@Id\n");
-		buffer.append ("@GeneratedValue(strategy = GenerationType.AUTO)\n");
-		buffer.append (" @Column(name=\"id\")\n");
-		buffer.append ("private Long id ;\n");
-buffer.append("private String nom ;\r\n" + 
-		"private String prenom ;\r\n" + 
-		"private String tlphon ;\r\n" + 
-		"public String getNom() {\r\n" + 
-		"	return nom;\r\n" + 
-		"}\r\n" + 
-		"public void setNom(String nom) {\r\n" + 
-		"	this.nom = nom;\r\n" + 
-		"}\r\n" + 
-		"public String getPrenom() {\r\n" + 
-		"	return prenom;\r\n" + 
-		"}\r\n" + 
-		"public void setPrenom(String prenom) {\r\n" + 
-		"	this.prenom = prenom;\r\n" + 
-		"}\r\n" + 
-		"public String getTlphon() {\r\n" + 
-		"	return tlphon;\r\n" + 
-		"}\r\n" + 
-		"public void setTlphon(String tlphon) {\r\n" + 
-		"	this.tlphon = tlphon;\r\n" + 
-		"}");
-
-		/*     public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    } */
+				"import javax.persistence.Id;\r\n" + 
+				"\r\n" + 
+				"import lombok.AllArgsConstructor;\r\n" + 
+				"import lombok.Data;\r\n" + 
+				"import lombok.NoArgsConstructor;\r\n" + 
+				"import lombok.ToString;\r\n" + 
+				"@Entity\r\n" + 
+				"@Data\r\n" + 
+				"@AllArgsConstructor\r\n" + 
+				"@NoArgsConstructor\r\n" + 
+				"@ToString\r\n" + 
+				"public class Dossier {\r\n" + 
+				"@Id\r\n" + 
+				"@GeneratedValue(strategy = GenerationType.AUTO)\r\n" + 
+				" @Column(name=\"id\")\r\n" + 
+				"private Long id ;\r\n" + 
+				"private String nom ;\r\n" + 
+				"private String prenom ;\r\n" + 
+				"private String tlphon ;");
+  
 		for (int i = 1; i < index+1; i++) {
-			buffer.append ("private String ch"+i+" ;\n");
-			buffer.append ("public String getch"+i+"() { ;\n");
-			buffer.append (" return ch"+i+"; \n");
-			buffer.append ("}\n");
-
-		}
-		for (int i = 1; i < index+1; i++) {
- 			buffer.append ("public void setch"+i+"(String ch"+i+") { ;\n");
-			buffer.append ("  this.ch"+i+"=ch"+i+" ; \n");
-			buffer.append ("}\n");
-
+			buffer.append ("private boolean ch"+i+" ;\n");
 		}
 		buffer.append ("}\n");
-		/*  
-
-     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="id")
-
-		 */
 
 		text=buffer.toString();
 		BufferedWriter output = null;

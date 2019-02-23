@@ -2,12 +2,18 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="myFunction" key="selection"/>
+		<item value="pass" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="pass"/>
+			<item value="save"/>
+			<item value="Etudiant"/>
+			<item value="spring-boot-configuration-processor"/>
+			<item value="ByteBuddy"/>
+			<item value="BookRepository2"/>
 			<item value="myFunction"/>
 			<item value="fa fa"/>
 			<item value="fa"/>
@@ -17,12 +23,6 @@
 			<item value="ent"/>
 			<item value="model"/>
 			<item value="contr"/>
-			<item value="cont"/>
-			<item value="addenployee"/>
-			<item value="refreshProperties"/>
-			<item value="dispatcherServlet"/>
-			<item value="changeDataSource"/>
-			<item value="Service"/>
 		</list>
 		<list key="replacehistory">
 		</list>
