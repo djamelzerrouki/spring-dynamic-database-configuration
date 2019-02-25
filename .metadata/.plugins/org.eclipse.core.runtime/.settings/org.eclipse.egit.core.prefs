@@ -1,4 +1,7 @@
 GitRepositoriesView.GitDirectories=C\:\\Users\\djamel\\.git;
 GitRepositoriesView.GitDirectories.relative=C\:\\Users\\djamel\\.git;
+RepositorySearchDialogDeepSearch=false
+RepositorySearchDialogSearchPath=C\:\\Users\\djamel\\Desktop\\Buro\\M2\\pfe\\project\\camunda-get-started-spring-boot-Step-3
+RepositorySearchDialogSkipHidden=true
 core_autoIgnoreDerivedResources=false
 eclipse.preferences.version=1

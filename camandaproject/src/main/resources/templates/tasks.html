@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout/fragments :: head(title='HS Ansbach : Tasks')">
+</head>
+
+<body>
+	<nav th:replace="layout/fragments :: navbar(active='Tasks', loggedIn='true')"></nav>
+
+	<div class="container">
+		<h2>Tasks</h2>
+		
+		<div th:replace="layout/fragments :: global_message(classappend='alert-success')"></div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<table class="table table-hover">
+					<tr>
+						<th>Id</th>
+						<th>Process Instance Id</th>
+						<th>Name</th>
+						<th>Assignee</th>
+						<th>Action</th>
+					</tr>
+					<tr th:each="assignedTask : ${assignedTasks}">
+						<td th:text="${assignedTask.id}"></td>
+						<td th:text="${assignedTask.processInstanceId}"></td>
+						<td th:text="${assignedTask.name}"></td>
+						<td th:text="${assignedTask.assignee}"></td>
+						<td>
+							<form th:action="@{/tasks}" th:object="${completeTaskModel}" method="post">
+								<input type="hidden" id="id" name="id" th:value="${assignedTask.id}" />
+								<button class="btn btn-primary" type="submit">Complete</button>
+							</form>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<div th:replace="layout/fragments :: bootstrap_js"></div>
+</body>
+</html>

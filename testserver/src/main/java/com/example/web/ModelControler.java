@@ -55,12 +55,13 @@ public class ModelControler {
 	}
 
 	@PostMapping("/postCreatTable" )
-	public String getNombrCh(@RequestParam(name = "nbr") Number nbr) throws IOException {
-		int index = (int) nbr;
+	public String getNombrCh(@RequestParam(name = "nbr") Number nbr) throws Exception {
+ 		int index =Integer.parseInt(nbr+"");
 		if(index>0) {
-		 
-			TestserverApplication.creatEntity("Dossier",index);
 
+
+				TestserverApplication.dropTable(namedb);
+			TestserverApplication.creatEntity("Dossier",index);
 			return "redirect:home";}
 		else {
 			return "redirect:addModele";

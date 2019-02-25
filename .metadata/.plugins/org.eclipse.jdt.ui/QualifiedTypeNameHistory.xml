@@ -52,12 +52,12 @@
 <fullyQualifiedTypeName name="java.io.Serializable"/>
 <fullyQualifiedTypeName name="lombok.Getter"/>
 <fullyQualifiedTypeName name="lombok.Setter"/>
-<fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
-<fullyQualifiedTypeName name="lombok.Data"/>
-<fullyQualifiedTypeName name="lombok.ToString"/>
 <fullyQualifiedTypeName name="com.example.model.user.Book"/>
 <fullyQualifiedTypeName name="com.example.model.Book"/>
 <fullyQualifiedTypeName name="com.example.book.repository.UserRepository"/>
 <fullyQualifiedTypeName name="com.example.config.BookDBConfig"/>
 <fullyQualifiedTypeName name="com.example.modele.Etudiant"/>
+<fullyQualifiedTypeName name="lombok.Data"/>
+<fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
+<fullyQualifiedTypeName name="lombok.ToString"/>
 </qualifiedTypeNameHistroy>

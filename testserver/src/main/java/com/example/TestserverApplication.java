@@ -135,7 +135,7 @@ public class TestserverApplication {
 	}
 
 	public static void creatEntity(String  name, int index) throws IOException {
-String text = "Hello world";
+ String text = "Hello world";
 		StringBuffer buffer= new StringBuffer() ;
 		buffer.append ("package com.example.entites;\r\n" + 
 				" \r\n" + 
@@ -161,7 +161,7 @@ String text = "Hello world";
 				"private Long id ;\r\n" + 
 				"private String nom ;\r\n" + 
 				"private String prenom ;\r\n" + 
-				"private String tlphon ;");
+				"private String tlphon ;\r\n");
   
 		for (int i = 1; i < index+1; i++) {
 			buffer.append ("private boolean ch"+i+" ;\n");
@@ -231,7 +231,25 @@ String text = "Hello world";
 
 		return 0;
 	}
+	public static void dropTable(String dbname) throws SQLException {
+		// SQLite connection string
+		String userName = "root";
+		String password = "root";
 
+		String url = "jdbc:mysql://localhost:3306/model_"+dbname;
+  		//DROP TABLE IF EXISTS table_name;
+		String sql1="DROP TABLE IF EXISTS  dossier ; ";
+
+		try (Connection	connection = DriverManager.getConnection(url,userName, password);
+
+			 Statement stmt = connection.createStatement()) {
+			// Droup a new table
+			stmt.execute(sql1);
+
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+	}
 	public static void createNewTable(String dbname,int index) throws SQLException {
 		// SQLite connection string
 		String userName = "root";

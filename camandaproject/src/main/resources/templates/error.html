@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout/fragments :: head(title='HS Ansbach : Error')">
+</head>
+
+<body>
+	<nav th:replace="layout/fragments :: navbar(loggedIn='true')"></nav>
+
+	<div class="container">
+		<h2>Error</h2>
+		
+		<div id="created" th:text="${#dates.format(timestamp)}"></div>
+		<div>
+			There was an unexpected error (type=<span th:text="${error}"></span>, status=<span th:text="${status}"></span>).
+		</div>
+		<div th:text="${message}"></div>
+		<div>Please contact the operator with the above information.</div>
+	</div>
+
+	<div th:replace="layout/fragments :: bootstrap_js"></div>
+</body>
+
+</html>

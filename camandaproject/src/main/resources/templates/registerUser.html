@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout/fragments :: head(title='HS Ansbach : Home')">
+</head>
+
+<body>
+	<nav th:replace="layout/fragments :: navbar"></nav>
+
+	<div class="container">
+		<h3>Register new user</h3>
+
+		<div th:replace="layout/fragments :: global_message(classappend='alert-danger')"></div>
+
+		<form class="form" th:action="@{/register/user}" th:object="${registerUserModel}" method="post">
+			<div th:if="${#fields.hasErrors('*')}">
+				<p th:each="error : ${#fields.errors('*')}" th:text="${error}" class="alert alert-danger"></p>
+			</div>
+			<div class="form-group" th:classappend="${#fields.hasErrors('user')} ? 'has-error'">
+				<label class="control-label" for="User">User</label>
+				<input class="form-control" placeholder="Text" autofocus="autofocus" id="user" name="user" type="text" th:field="*{user}" />
+			</div>
+			<div class="form-group" th:classappend="${#fields.hasErrors('password')} ? 'has-error'">
+				<label class="control-label" for="Password">Password</label>
+				<input class="form-control" placeholder="Password" autofocus="autofocus" id="password" name="password" type="password" th:field="*{password}" />
+			</div>
+			<button class="btn btn-primary" type="submit">Register</button>
+		</form>
+	</div>
+
+	<div th:replace="layout/fragments :: bootstrap_js"></div>
+</body>
+</html>
