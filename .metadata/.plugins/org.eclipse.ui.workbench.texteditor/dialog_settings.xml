@@ -8,21 +8,21 @@
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="dja"/>
-			<item value="cartebiometrique"/>
-			<item value="ddddEntityManagerFactory"/>
-			<item value="creat"/>
-			<item value="dddd"/>
-			<item value="djamel"/>
-			<item value="Employe"/>
-			<item value="enployee"/>
-			<item value="saveEnployee"/>
-			<item value="dro"/>
-			<item value="nbr"/>
-			<item value="??"/>
-			<item value="pr"/>
-			<item value="doss"/>
-			<item value="pass"/>
+			<item value="spring-boot-configuration-processor"/>
+			<item value="getTaskNode"/>
+			<item value="getNextTasks"/>
+			<item value="testgetFlowingFlowNodes"/>
+			<item value="test"/>
+			<item value="pathUploads"/>
+			<item value="next"/>
+			<item value="0o2g40i"/>
+			<item value="m&quot;"/>
+			<item value="Reload"/>
+			<item value="reload"/>
+			<item value="relo"/>
+			<item value="rel"/>
+			<item value="red."/>
+			<item value="red"/>
 		</list>
 		<list key="replacehistory">
 			<item value="&quot;+name+&quot;"/>
@@ -33,7 +33,7 @@
 		<item value="336" key="DIALOG_WIDTH"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 		<item value="424" key="DIALOG_HEIGHT"/>
-		<item value="1019" key="DIALOG_X_ORIGIN"/>
+		<item value="1593" key="DIALOG_X_ORIGIN"/>
 		<item value="615" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

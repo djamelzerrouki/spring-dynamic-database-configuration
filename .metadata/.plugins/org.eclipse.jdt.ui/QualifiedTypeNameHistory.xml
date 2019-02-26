@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="net.bytebuddy.ByteBuddy"/>
-<fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility"/>
 <fullyQualifiedTypeName name="net.bytebuddy.implementation.FieldAccessor"/>
 <fullyQualifiedTypeName name="net.bytebuddy.dynamic.loading.ClassLoadingStrategy"/>
 <fullyQualifiedTypeName name="com.example.dao.DossierRepository"/>
@@ -60,4 +58,6 @@
 <fullyQualifiedTypeName name="org.camunda.bpm.model.bpmn.instance.Task"/>
 <fullyQualifiedTypeName name="com.example.repository.djamel.RepoServicedjamel"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestController"/>
+<fullyQualifiedTypeName name="com.example.controller.FileUploadController"/>
+<fullyQualifiedTypeName name="com.example.testcamanda"/>
 </qualifiedTypeNameHistroy>

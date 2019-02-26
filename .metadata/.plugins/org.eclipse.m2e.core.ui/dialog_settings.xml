@@ -10,4 +10,18 @@
 		<item value="71" key="y"/>
 		<item value="667" key="height"/>
 	</section>
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="C:\Users\djamel\Desktop\Buro\M2\pfe\project\micro-services-spring-cloud\micro-services-spring-cloud\service-config"/>
+			<item value="C:\Users\djamel\Desktop\Buro\M2\pfe\project\micro-services-spring-cloud\micro-services-spring-cloud\service-company"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
 </section>

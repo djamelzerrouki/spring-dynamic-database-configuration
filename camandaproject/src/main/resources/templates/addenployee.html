@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<th:block th:include="/fragments/head :: head"></th:block>
+	
+</head>
+<body>
+<div id="fh5co-page">
+	<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+
+	<th:block th:include="/fragments/menu :: menu"></th:block>
+
+	<div id="fh5co-main">
+	<th:block th:include="/fragments/menu2 :: menu2"></th:block>
+
+
+<div style="padding:0 16px;">
+  <h2>Responsive Topnav Example</h2>
+  <p>This example use media queries to stack the topnav vertically when the screen size is 600px or less.</p>
+  <p>You will learn more about media queries and responsive web design later in our CSS Tutorial.</p>
+  <h4>Resize the browser window to see the effect.</h4>
+</div>
+			<div class="fh5co-narrow-content">
+				<h1 class="fh5co-heading animate-box"
+					data-animate-effect="fadeInLeft">Enployee</h1>
+
+
+
+
+				<div class="row animate-box" data-animate-effect="fadeInLeft">
+
+					<div class="col-md-6 col-sm-6 col-xs-12 spacer col-md-offset-3">
+						<div class="panel panel-default">
+							<div class="panel-heading">Ajouter Nouveau Enployee</div>
+
+							<div class="panel-body">
+
+								<form th:action="@{saveEnployee}" method="post"
+									th:object="${enployee}">
+
+									<div class="form-group">
+<!-- 										<label class="control-label">Nom:</label>  -->
+										<input type="text"
+											th:field="*{name}" class="form-control" placeholder="Nom"  required     /> <span></span>
+									</div>
+									<div class="form-group">
+<!-- 										<label class="control-label">Password:</label>  -->
+										<input
+											type="password" th:field="*{password}" class="form-control" placeholder="Mot de Passe" required/>
+										<span></span>
+									</div>
+									<div class="form-group">
+<!-- 										<label class="control-label">N° de tlphon :</label> -->
+										 <input	type="number" th:field="*{tlphon}" class="form-control" placeholder="N° de tlphone" required/> <span></span>
+									</div>
+									<div class="form-group">
+<!-- 										<label class="control-label">Date:</label>  -->
+										<input type="date"
+											th:field="*{datenes}" class="form-control" placeholder="Date" required/> <span></span>
+									</div>
+									<div class="form-group">
+<!-- 										<label class="control-label">Code de Service :</label>  -->
+										<input
+											type="number" th:field="*{servicid}" class="form-control" placeholder="Code de Service" required/>
+										<span></span>
+									</div>
+									<div>
+										<button type="submit" class="btn btn-primary">Enregistré</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+
+
+
+				</div>
+			</div>
+
+
+<!-- <form action="#" th:action="@{/}" th:object="${personForm}" method="post"> -->
+<!--             <table> -->
+<!--                 <tr> -->
+<!--                     <td>Name:</td> -->
+<!--                     <td><input type="text" th:field="*{name}" /></td> -->
+<!--                     <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</td> -->
+<!--                 </tr> -->
+<!--                 <tr> -->
+<!--                     <td>Age:</td> -->
+<!--                     <td><input type="text" th:field="*{age}" /></td> -->
+<!--                     <td th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Age Error</td> -->
+<!--                 </tr> -->
+<!--                 <tr> -->
+<!--                     <td><button type="submit">Submit</button></td> -->
+<!--                 </tr> -->
+<!--             </table> -->
+<!--         </form> -->
+			<h2 class="fh5co-heading animate-box"
+				data-animate-effect="fadeInLeft">Liste des Enployee</h2>
+
+
+
+			<div class="col-md-6">
+			<div class="panel-body">
+
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>Nom</th>
+							<th>pasword</th>
+							<th>tlphon</th>
+							<th>code servis</th>
+							<th>date</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="e:${enployees}">
+							<td th:text="${e.id}"></td>
+							<td th:text="${e.name}"></td>
+							<td th:text="${e.password}"></td>
+							<td th:text="${e.tlphon}"></td>
+							<td th:text="${e.servicid}"></td>
+							<td th:text="${e.datenes}"></td>
+							<td >
+							<a> <i class="fa fa-edit" style="font-size:21 px;color:blue;"></i></a>
+							<a> <i class="fa fa-trash" style="font-size:21 px;color:red;"></i></a>
+							</td>
+
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			</div>
+			<div class="row animate-box" data-animate-effect="fadeInLeft">
+				<div class="col-md-4 col-sm-4 col-xs-4 text-center">
+					<a href="#"><span>Ajouter Nouveau Srervice </span> <i
+						class="icon-long-arrow-right"></i></a>
+				</div>
+			</div>
+		
+		
+			 		
+		
+	</div>
+	</div>
+
+
+
+
+
+
+
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Carousel -->
+	<script src="js/owl.carousel.min.js"></script>
+	<!-- Stellar -->
+	<script src="js/jquery.stellar.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Counters -->
+	<script src="js/jquery.countTo.js"></script>
+
+
+	<!-- MAIN JS -->
+	<script src="js/main.js"></script>
+</body>
+</html>
+

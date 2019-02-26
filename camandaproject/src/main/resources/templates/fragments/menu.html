@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	  xsi:schemaLocation="http://www.thymeleaf.org ">
+<head>
+	<meta charset="UTF-8"/>
+	<title>NavigationBar</title>
+	<link rel="stylesheet" type="text/css" media="all" href="../../css/NavBar.css" th:href="@{/css/NavBar.css}" />
+</head>
+<body>
+<div>
+	<div th:fragment="menu" >
+		<div class="navbar-inner">
+<aside id="fh5co-aside" role="complementary"
+	   class="border js-fullheight">
+
+	<h1 id="fh5co-logo">
+		<a href="/Modele/home"><img src="../static/images/logo.PNG"
+							th:src="@{/images/logo.PNG}"></a>
+	</h1>
+	<nav id="fh5co-main-menu" role="navigation">
+		<ul>
+			<li class="fh5co-active"><a href="/Modele/home">Accueil</a></li>
+			<li><a href="/Modele/addModele">Add Modele</a></li>
+			<li><a href="/Modele/bpmn">Bpmn</a></li>
+
+			<li><a href="/Modele/about.html">About</a></li>
+			<li><a href="/Modele/contact.html">Contact</a></li>
+		</ul>
+
+	</nav>
+
+	<div class="fh5co-footer">
+
+		<ul>
+			<li><a href="#"><i class="icon-facebook"></i></a></li>
+			<li><a href="#"><i class="icon-twitter"></i></a></li>
+			<li><a href="#"><i class="icon-instagram"></i></a></li>
+			<li><a href="#"><i class="icon-linkedin"></i></a></li>
+		</ul>
+	</div>
+
+</aside>
+		</div>
+	</div>
+</div>
+</body>
+</html>

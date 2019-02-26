@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions >
+  <process id="Process_1" isExecutable="false">
+    <startEvent id="StartEvent_1">
+      <outgoing>SequenceFlow_0sg4sqa</outgoing>
+    </startEvent>
+    <task id="Task_0nf0gpi" name="S1">
+      <incoming>SequenceFlow_0sg4sqa</incoming>
+      <outgoing>SequenceFlow_16c0rh8</outgoing>
+    </task>
+    <sequenceFlow id="SequenceFlow_0sg4sqa" sourceRef="StartEvent_1" targetRef="Task_0nf0gpi" />
+    <task id="Task_1jb3jl3" name="S2">
+      <incoming>SequenceFlow_16c0rh8</incoming>
+      <outgoing>SequenceFlow_0x7327s</outgoing>
+    </task>
+    <sequenceFlow id="SequenceFlow_16c0rh8" sourceRef="Task_0nf0gpi" targetRef="Task_1jb3jl3" />
+    <task id="Task_1j6ows4" name="S3">
+      <incoming>SequenceFlow_0x7327s</incoming>
+      <outgoing>SequenceFlow_0xspjs0</outgoing>
+    </task>
+    <sequenceFlow id="SequenceFlow_0x7327s" sourceRef="Task_1jb3jl3" targetRef="Task_1j6ows4" />
+    <endEvent id="EndEvent_0hyy2zd">
+      <incoming>SequenceFlow_0xspjs0</incoming>
+    </endEvent>
+    <sequenceFlow id="SequenceFlow_0xspjs0" sourceRef="Task_1j6ows4" targetRef="EndEvent_0hyy2zd" />
+  </process>
+  <BPMNDiagram id="BPMNDiagram_1">
+    <BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1">
+      <BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <Bounds x="223" y="214" width="36" height="36" />
+      </BPMNShape>
+      <BPMNShape id="Task_0nf0gpi_di" bpmnElement="Task_0nf0gpi">
+        <Bounds x="345" y="192" width="100" height="80" />
+      </BPMNShape>
+      <BPMNEdge id="SequenceFlow_0sg4sqa_di" bpmnElement="SequenceFlow_0sg4sqa">
+        <waypoint x="259" y="232" />
+        <waypoint x="345" y="232" />
+      </BPMNEdge>
+      <BPMNShape id="Task_1jb3jl3_di" bpmnElement="Task_1jb3jl3">
+        <Bounds x="531" y="192" width="100" height="80" />
+      </BPMNShape>
+      <BPMNEdge id="SequenceFlow_16c0rh8_di" bpmnElement="SequenceFlow_16c0rh8">
+        <waypoint x="445" y="232" />
+        <waypoint x="531" y="232" />
+      </BPMNEdge>
+      <BPMNShape id="Task_1j6ows4_di" bpmnElement="Task_1j6ows4">
+        <Bounds x="717" y="192" width="100" height="80" />
+      </BPMNShape>
+      <BPMNEdge id="SequenceFlow_0x7327s_di" bpmnElement="SequenceFlow_0x7327s">
+        <waypoint x="631" y="232" />
+        <waypoint x="717" y="232" />
+      </BPMNEdge>
+      <BPMNShape id="EndEvent_0hyy2zd_di" bpmnElement="EndEvent_0hyy2zd">
+        <Bounds x="903" y="214" width="36" height="36" />
+      </BPMNShape>
+      <BPMNEdge id="SequenceFlow_0xspjs0_di" bpmnElement="SequenceFlow_0xspjs0">
+        <waypoint x="817" y="232" />
+        <waypoint x="903" y="232" />
+      </BPMNEdge>
+    </BPMNPlane>
+  </BPMNDiagram>
+</definitions>

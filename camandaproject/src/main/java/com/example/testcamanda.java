@@ -21,12 +21,19 @@ import org.camunda.bpm.model.xml.instance.ModelElementInstance;
 import org.camunda.bpm.model.xml.type.ModelElementType;
 
 public class testcamanda {
+	//camandaproject uploads
+	public static final String pathUploads="..\\camandaproject\\uploads\\";
+// path ta3 ficher bpmn fe lproject 
+	public static final String path="../camandaproject\\src\\main\\resources\\loanApproval.bpmn";
 	static BpmnModelInstance modelInstance;
-	static void mymethod(){
-		File file = new File("../camandaproject\\src\\main\\resources\\loanApproval.bpmn");
+	public static void mymethod(String path){
+		path=pathUploads+path;
+		File file = new File(path);
 		BpmnModelInstance modelInstance = Bpmn.readModelFromFile(file);
-		getTaskNode(modelInstance);
-		// find element instance by ID
+		getTaskNode(modelInstance,path);
+		
+		
+		/*// find element instance by ID
 		StartEvent start = (StartEvent) modelInstance.getModelElementById("start");
 
 		// find all elements of the type task
@@ -44,10 +51,10 @@ public class testcamanda {
 		// get all outgoing sequence flows of the source
 		Collection<SequenceFlow> outgoing = source.getOutgoing();
 		assert(outgoing.contains(sequenceFlow));
-
+*/
 	}
 	public static void main(String[] arges){
-		mymethod();
+		mymethod(path);
 	}
 
 	public static  Collection<FlowNode> getFlowingFlowNodes(FlowNode node) {
@@ -57,7 +64,9 @@ public class testcamanda {
 		}
 		return followingFlowNodes;
 	}
-	public static void getStertEventNode(BpmnModelInstance modelInstance ){
+	// start Event method get node
+	
+public static void getStertEventNode(BpmnModelInstance modelInstance ){
 		StartEvent start = (StartEvent) modelInstance.getModelElementById("start");
 
 		// read attributes by helper methods
@@ -77,7 +86,8 @@ public class testcamanda {
 		start.setAttributeValueNs("custom-attribute", "http://camunda.org/custom", "new value");
 	}
 	// task method get node
-	public static void getTaskNode(BpmnModelInstance modelInstance ){
+	
+public static void getTaskNode(BpmnModelInstance modelInstance ,String path){
 		Collection<Task> tasks = (Collection<Task>) modelInstance.getModelElementsByType(Task.class);
 		tasks.forEach(t->{
 
@@ -85,7 +95,7 @@ public class testcamanda {
 			String id = t.getId();
 			String name = t.getName();
 			String type=t.getElementType().getTypeName();
-			List<Task> possibleTasks=	new testcamanda().getNextTasks(t.getId() );
+			List<Task> possibleTasks=	new testcamanda().getNextTasks(t.getId() ,path);
 
 			System .out.println("ID: "+ id +" Name : "+name +" Type : "+type);
 			possibleTasks.forEach(tsk->{
@@ -97,8 +107,8 @@ public class testcamanda {
 	}
 
 
-	public List<Task> getNextTasks(  String taskDefinitionKey ) {
-		File file = new File("../camandaproject\\src\\main\\resources\\loanApproval.bpmn");
+	public List<Task> getNextTasks(  String taskDefinitionKey ,String path ) {
+		File file = new File(path);
 
 		BpmnModelInstance modelInstance = Bpmn.readModelFromFile(file);
 		ModelElementInstance instance = modelInstance.getModelElementById(taskDefinitionKey);
