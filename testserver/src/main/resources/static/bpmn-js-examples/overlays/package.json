@@ -1,0 +1,44 @@
+{
+  "name": "bpmn-js-example-overlay-api",
+  "version": "0.0.0",
+  "description": "An example how to use the Overlay API",
+  "main": "app/app.js",
+  "scripts": {
+    "all": "grunt",
+    "dev": "grunt auto-build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bpmn-io/bpmn-js-examples"
+  },
+  "keywords": [
+    "bpmnjs-example"
+  ],
+  "author": {
+    "name": "Joerg Dotzki",
+    "url": "https://github.com/ISO50"
+  },
+  "contributors": [
+    {
+      "name": "bpmn.io contributors",
+      "url": "https://github.com/bpmn-io"
+    }
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babelify": "^8.0.0",
+    "grunt": "~1.0.1",
+    "grunt-browserify": "^5.0.0",
+    "grunt-contrib-watch": "~1.0.0",
+    "grunt-contrib-connect": "~1.0.2",
+    "grunt-contrib-copy": "~1.0.0",
+    "load-grunt-tasks": "~3.5.0",
+    "stringify": "^3.1.0"
+  },
+  "dependencies": {
+    "bpmn-js": "^3.0.1",
+    "min-dash": "^3.0.0"
+  }
+}
