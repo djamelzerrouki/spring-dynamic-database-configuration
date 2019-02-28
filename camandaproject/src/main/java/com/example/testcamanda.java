@@ -7,6 +7,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
+import ch.qos.logback.core.net.SyslogOutputStream;
 import org.camunda.bpm.engine.RepositoryService;
 import org.camunda.bpm.engine.impl.javax.el.ExpressionFactory;
 import org.camunda.bpm.engine.impl.javax.el.ValueExpression;
@@ -121,6 +122,7 @@ tasks.forEach(t->{
 		for(SequenceFlow sf: node.getOutgoing()) {
 			if (sf.getName() != null) {
 			//	LOGGER.info("Entering flow node {}", sf.getName());
+				System.out.println("Entering flow node {}"+sf.getName());
 			}
 			boolean next = true;
 			if (sf.getConditionExpression() != null) {
@@ -128,6 +130,7 @@ tasks.forEach(t->{
 				SimpleContext context = new SimpleContext(new SimpleResolver());
 
 			//	LOGGER.info("Generating map vars {}", vars.toString());
+				System.out.println("Generating map vars {}"+ vars.toString());
 				for (Map.Entry<String, Object> v : vars.entrySet()) {
 					if(v.getValue() instanceof Boolean) {
 						factory.createValueExpression(context, "${"+ v.getKey() +"}", Boolean.class).setValue(context, v.getValue());
@@ -141,12 +144,15 @@ tasks.forEach(t->{
 
 				next = (Boolean)expr1.getValue(context);
 		//	LOGGER.info("Evaluating expression {} to result {}", sf.getConditionExpression().getTextContent(), expr1.getValue(context));
+				System.out.println("Evaluating expression {} to result {}"+ sf.getConditionExpression().getTextContent()+ expr1.getValue(context));
 
 			}
 
 			if (next && sf.getTarget() != null) {
 				if (sf.getTarget() instanceof  Task) {
 					//LOGGER.info("Found next   task {}", sf.getTarget().getName());
+					System.out.println("Found next   task {}"+ sf.getTarget().getName());
+
 					possibleTasks.add(( Task)sf.getTarget());
 					break;
 				}
