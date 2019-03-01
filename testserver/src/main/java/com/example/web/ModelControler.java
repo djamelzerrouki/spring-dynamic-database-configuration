@@ -35,9 +35,10 @@ public class ModelControler {
 		return "creatmodel";
 	}
 	//C:\Users\djamel\Documents\workspace-spring-tool-suite-4-4.0.1.RELEASE\testserver\src\main\resources\templates\bpmn-js-examples\modeler\public\index.html
-	@RequestMapping(value="/bpmn" ,method=RequestMethod.GET)
+	@RequestMapping(value="/bpmn")
 	public String bpmnModele()  {
-		return "bpmn.html";
+//modeler\public\index.html
+		return "bpmn";
 	}
 
 	@PostMapping("/postEndpoint" )
