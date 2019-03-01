@@ -34,6 +34,11 @@ public class ModelControler {
 
 		return "creatmodel";
 	}
+	//C:\Users\djamel\Documents\workspace-spring-tool-suite-4-4.0.1.RELEASE\testserver\src\main\resources\templates\bpmn-js-examples\modeler\public\index.html
+	@RequestMapping(value="/bpmn" ,method=RequestMethod.GET)
+	public String bpmnModele()  {
+		return "bpmn.html";
+	}
 
 	@PostMapping("/postEndpoint" )
 	public String pidUserSubmit(@RequestParam(name = "namemodel") String namemodel) throws IOException, SQLException {
@@ -61,6 +66,7 @@ public class ModelControler {
 
 
 				TestserverApplication.dropTable(namedb);
+				
 			TestserverApplication.creatEntity("Dossier",index);
 			return "redirect:home";}
 		else {
