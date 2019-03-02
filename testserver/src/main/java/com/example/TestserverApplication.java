@@ -32,7 +32,6 @@ import com.example.entites.Service;
 import net.bytebuddy.ByteBuddy;
 import net.bytebuddy.dynamic.loading.ClassLoadingStrategy;
 import net.bytebuddy.implementation.FieldAccessor;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 @SpringBootApplication
 @EnableAutoConfiguration
@@ -68,12 +67,6 @@ public class TestserverApplication {
 				.make()
 				.load(getClass().getClassLoader(), ClassLoadingStrategy.Default.WRAPPER)
 				.getLoaded();	
-	}
-	@RequestMapping(value="/bpmn")
-	public String bpmnModele()  {
-//modeler\public\index.html
-		//C:\Users\djamel\Documents\workspace-spring-tool-suite-4-4.0.1.RELEASE\testserver\src\main\resources\templates\bpmn.html
-		return "bpmn";
 	}
 	public static void main(String[] args) throws IOException {
 		TestserverApplication.args = args;
