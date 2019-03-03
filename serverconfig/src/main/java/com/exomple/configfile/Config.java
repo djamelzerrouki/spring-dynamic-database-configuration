@@ -5,8 +5,15 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 
 public class Config {
+	private static Connection connection;
 
 	public static void main(String[] args) throws IOException {
 		// TODO main test methode by jimmi
@@ -229,5 +236,88 @@ public class Config {
 
 
 	}
+	//dropDataBase
+	public static int dropDataBase(String databaseName){
+		try {
+			// String databaseName = "d";
+			String userName = "root";
+			String password = "root";
+
+			String url = "jdbc:mysql://localhost:3306/mysql?zeroDateTimeBehavior=convertToNull";
+			connection = DriverManager.getConnection(url,userName, password);
+
+			String sql = "DROP DATABASE IF  EXISTS model_" + databaseName;
+
+			Statement statement = connection.createStatement();
+			statement.executeUpdate(sql);
+			statement.close();
+			//	JOptionPane.showMessageDialog(null,databaseName + " Database has been created successfully", "System Message", JOptionPane.INFORMATION_MESSAGE);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return 0;
+	}
+// creatDataBase
+	public static int creatDataBase(String databaseName){
+		try {
+			// String databaseName = "d";
+			String userName = "root";
+			String password = "root";
+
+			String url = "jdbc:mysql://localhost:3306/mysql?zeroDateTimeBehavior=convertToNull";
+			connection = DriverManager.getConnection(url,userName, password);
+
+			String sql = "CREATE DATABASE IF NOT EXISTS model_" + databaseName;
+
+			Statement statement = connection.createStatement();
+			statement.executeUpdate(sql);
+			statement.close();
+			//	JOptionPane.showMessageDialog(null,databaseName + " Database has been created successfully", "System Message", JOptionPane.INFORMATION_MESSAGE);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return 0;
+	}
+	//configModale
+	public static void configModale(String nameDataBase) throws IOException {
+		if(nameDataBase!=null) {
+			nameDataBase =nameDataBase.replaceAll("\\s","");}
+
+		configPropertiesFile(nameDataBase); 
+		creatDataBase(nameDataBase);
+		showDatabase();
+	}
+	// showDatabase
+	public static ArrayList<String> showDatabase(){
+	ArrayList<String> listData=new ArrayList<String>();
+	// String databaseName = "d";
+	String userName = "root";
+	String password = "root";
+
+	String url = "jdbc:mysql://localhost:3306/mysql?zeroDateTimeBehavior=convertToNull" ;
+	
+	try {
+		connection = DriverManager.getConnection(url,userName, password);
+
+		Statement stmt = connection.createStatement();
+		ResultSet rs = stmt.executeQuery("SHOW DATABASES;");
+		while (rs.next()) {
+			String database = rs.getString(1);
+			if (database.startsWith("model_")) {
+				System.out.println(database + "\n");
+				listData.add(database);
+			}
+		}
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	return listData;
+
+}
 
 }

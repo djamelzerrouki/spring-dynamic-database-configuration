@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css"
+	href="../static/css/bootstrap.min.css"
+	th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+	<h1>Liste des Enployee</h1>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Nom</th>
+				<th>pasword</th>
+				<th>tlphon</th>
+				<th>code servis</th>
+				<th>date</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="e:${enployees}">
+				<td th:text="${e.id}"></td>
+				<td th:text="${e.name}"></td>
+				<td th:text="${e.password}"></td>
+				<td th:text="${e.tlphon}"></td>
+				<td th:text="${e.servicid}"></td>
+				<td th:text="${e.datenes}"></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

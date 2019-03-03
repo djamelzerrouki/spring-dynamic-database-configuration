@@ -1124,3 +1124,254 @@ java.util.concurrent.TimeoutException
 
 !ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2019-03-03 08:44:01.945
 !MESSAGE Field value processing of @ConfigurationProperty meta-data is not supported
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2019-03-03 09:19:35.856
+!MESSAGE Field value processing of @ConfigurationProperty meta-data is not supported
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2019-03-03 09:20:26.286
+!MESSAGE Field value processing of @ConfigurationProperty meta-data is not supported
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2019-03-03 09:20:33.828
+!MESSAGE Field value processing of @ConfigurationProperty meta-data is not supported
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2019-03-03 09:22:08.929
+!MESSAGE Field value processing of @ConfigurationProperty meta-data is not supported
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2019-03-03 09:22:34.907
+!MESSAGE Field value processing of @ConfigurationProperty meta-data is not supported
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2019-03-03 09:23:00.768
+!MESSAGE Field value processing of @ConfigurationProperty meta-data is not supported
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2019-03-03 09:23:07.260
+!MESSAGE Field value processing of @ConfigurationProperty meta-data is not supported
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2019-03-03 09:25:13.530
+!MESSAGE Field value processing of @ConfigurationProperty meta-data is not supported
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2019-03-03 09:25:47.660
+!MESSAGE Field value processing of @ConfigurationProperty meta-data is not supported
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2019-03-03 09:26:02.851
+!MESSAGE Field value processing of @ConfigurationProperty meta-data is not supported
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2019-03-03 09:26:29.069
+!MESSAGE Field value processing of @ConfigurationProperty meta-data is not supported
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2019-03-03 09:27:10.730
+!MESSAGE Field value processing of @ConfigurationProperty meta-data is not supported
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2019-03-03 09:28:24.211
+!MESSAGE Field value processing of @ConfigurationProperty meta-data is not supported
+
+!ENTRY org.eclipse.lsp4e 4 0 2019-03-03 09:30:14.625
+!MESSAGE 
+!STACK 0
+java.util.concurrent.TimeoutException
+	at java.util.concurrent.CompletableFuture.timedGet(Unknown Source)
+	at java.util.concurrent.CompletableFuture.get(Unknown Source)
+	at org.eclipse.lsp4e.operations.hover.LSBasedHover.getHoverInfo(LSBasedHover.java:168)
+	at org.springframework.tooling.boot.ls.jdt.SpringBootJavaHoverProvider.getHoverInfo(SpringBootJavaHoverProvider.java:35)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:173)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:133)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2019-03-03 09:30:37.653
+!MESSAGE Field value processing of @ConfigurationProperty meta-data is not supported
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2019-03-03 09:32:02.775
+!MESSAGE Field value processing of @ConfigurationProperty meta-data is not supported
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2019-03-03 09:34:18.505
+!MESSAGE Field value processing of @ConfigurationProperty meta-data is not supported
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:46:10.700
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.fRmgIuBk
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:46:10.706
+!MESSAGE subscribing to classpath changes: sts4.classpath.fRmgIuBk
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:46:10.713
+!MESSAGE subsribers = [sts4.classpath.fRmgIuBk, sts4.classpath.UugDcRDZ]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:46:10.719
+!MESSAGE Sending initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:46:10.725
+!MESSAGE project serverconfig ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:46:10.732
+!MESSAGE Preparing classpath changed notification serverconfig
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:46:10.738
+!MESSAGE project testserver ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:46:10.744
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:46:10.750
+!MESSAGE project camandaproject ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:46:10.757
+!MESSAGE project springsocialfacebook ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:46:10.764
+!MESSAGE classpath=101 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:46:10.778
+!MESSAGE project studentapp ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:46:10.785
+!MESSAGE executing callback sts4.classpath.fRmgIuBk serverconfig false 101
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:46:10.791
+!MESSAGE project testML ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:46:10.799
+!MESSAGE Sending initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:46:10.806
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.fRmgIuBk => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:46:10.906
+!MESSAGE executing callback sts4.classpath.fRmgIuBk SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:46:10.914
+!MESSAGE Preparing classpath changed notification testML
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:46:10.921
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:46:10.930
+!MESSAGE classpath=19 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:46:10.937
+!MESSAGE executing callback sts4.classpath.fRmgIuBk testML false 19
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:46:10.951
+!MESSAGE executing callback sts4.classpath.fRmgIuBk SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:46:10.958
+!MESSAGE Preparing classpath changed notification studentapp
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:46:10.969
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:46:11.008
+!MESSAGE classpath=135 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:46:11.015
+!MESSAGE executing callback sts4.classpath.fRmgIuBk studentapp false 135
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:46:11.165
+!MESSAGE executing callback sts4.classpath.fRmgIuBk SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:46:11.175
+!MESSAGE Preparing classpath changed notification springsocialfacebook
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:46:11.187
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:46:11.212
+!MESSAGE classpath=85 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:46:11.238
+!MESSAGE executing callback sts4.classpath.fRmgIuBk springsocialfacebook false 85
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:46:11.334
+!MESSAGE executing callback sts4.classpath.fRmgIuBk SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:46:11.341
+!MESSAGE Preparing classpath changed notification camandaproject
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:46:11.352
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:46:11.376
+!MESSAGE classpath=146 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:46:11.383
+!MESSAGE executing callback sts4.classpath.fRmgIuBk camandaproject false 146
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:46:11.538
+!MESSAGE executing callback sts4.classpath.fRmgIuBk SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:46:11.546
+!MESSAGE Preparing classpath changed notification testserver
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:46:11.552
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:46:11.570
+!MESSAGE classpath=129 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:46:11.577
+!MESSAGE executing callback sts4.classpath.fRmgIuBk testserver false 129
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:46:11.655
+!MESSAGE executing callback sts4.classpath.fRmgIuBk SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:46:56.861
+!MESSAGE Preparing classpath changed notification serverconfig
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:46:56.869
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:46:56.887
+!MESSAGE classpath=107 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:46:56.899
+!MESSAGE executing callback sts4.classpath.fRmgIuBk serverconfig false 107
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:46:57.002
+!MESSAGE executing callback sts4.classpath.fRmgIuBk SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:46:57.014
+!MESSAGE executing callback sts4.classpath.UugDcRDZ serverconfig false 107
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:46:57.029
+!MESSAGE executing callback sts4.classpath.UugDcRDZ FAILED
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 4 0 2019-03-03 09:46:57.036
+!MESSAGE 
+!STACK 0
+java.lang.UnsupportedOperationException: No language server has registered to handle command 'sts4.classpath.UugDcRDZ'
+	at org.springframework.tooling.ls.eclipse.commons.LSP4ECommandExecutor.executeClientCommand(LSP4ECommandExecutor.java:42)
+	at org.springframework.tooling.jdt.ls.commons.classpath.ReusableClasspathListenerHandler$Subscriptions$2.run(ReusableClasspathListenerHandler.java:179)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2019-03-03 09:47:09.531
+!MESSAGE Field value processing of @ConfigurationProperty meta-data is not supported
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2019-03-03 09:47:09.874
+!MESSAGE Field value processing of @ConfigurationProperty meta-data is not supported
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:47:12.903
+!MESSAGE Preparing classpath changed notification serverconfig
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:47:12.911
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:47:12.926
+!MESSAGE classpath=107 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:47:12.933
+!MESSAGE executing callback sts4.classpath.fRmgIuBk serverconfig false 107
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:47:12.947
+!MESSAGE executing callback sts4.classpath.fRmgIuBk SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:47:12.954
+!MESSAGE executing callback sts4.classpath.UugDcRDZ serverconfig false 107
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-03 09:47:12.962
+!MESSAGE executing callback sts4.classpath.UugDcRDZ FAILED
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 4 0 2019-03-03 09:47:12.968
+!MESSAGE 
+!STACK 0
+java.lang.UnsupportedOperationException: No language server has registered to handle command 'sts4.classpath.UugDcRDZ'
+	at org.springframework.tooling.ls.eclipse.commons.LSP4ECommandExecutor.executeClientCommand(LSP4ECommandExecutor.java:42)
+	at org.springframework.tooling.jdt.ls.commons.classpath.ReusableClasspathListenerHandler$Subscriptions$2.run(ReusableClasspathListenerHandler.java:179)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
