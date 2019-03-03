@@ -36,7 +36,7 @@ public class ConfDBvvvb {
 		properties.put("hibernate.hbm2ddl.auto", "update");
 		properties.put("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
 		return builder.dataSource(dataSource).properties(properties)
-				.packages("com.example.model").persistenceUnit("vvvb").build();
+				.packages("com.example.model","com.example.repository.vvvb").persistenceUnit("vvvb").build();
 	}
 
 	@Bean(name = "vvvbTransactionManager")

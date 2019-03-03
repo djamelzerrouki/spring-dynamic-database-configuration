@@ -17,7 +17,8 @@ public class Config {
 	public static  void configAll(String name,int nbr) throws IOException  {
 		// TODO main test methode by jimmi
 		 	newMkdirss(FinalName.pathRepository,name);
-
+		 // creation Entity Dossier
+			creatEntity(name,nbr);
 		// addingRepository
 		addingRepository(name,"Employe");
 		addingRepository(name,"Book");
@@ -25,8 +26,7 @@ public class Config {
 		addingRepository(name,"Service");
 		addingRepository(name,"Historique");
 		addingRepository(name,"Dossier");
-// creation Entity Dossier
-		creatEntity(name,nbr);
+
 		// creation creat Config DB Class 
 		creatConfigDBClass(name);
 		// config Properties File
@@ -46,9 +46,14 @@ public class Config {
 				"\r\n" + 
 				"import org.springframework.data.jpa.repository.JpaRepository;\r\n" + 
 				"import org.springframework.stereotype.Repository;\r\n" + 
-				"\r\n" + 
-				"import com.example.model."+nameEntity+";\r\n" + 
-				"\r\n" + 
+				"\r\n");
+		if (nameEntity=="Dossier") {
+			buffer.append ("import com.example.repository."+nameModel+"."+nameEntity+";\r\n" );
+
+		}else {
+				buffer.append ("import com.example.model."+nameEntity+";\r\n" );
+		}
+						buffer.append ("\r\n" + 
 				"@Repository\r\n" + 
 				"public interface Repo"+nameEntity+nameModel+" extends JpaRepository<"+nameEntity+", Long>{\r\n" + 
 				"\r\n" + 
@@ -117,7 +122,7 @@ public class Config {
 				"		properties.put(\"hibernate.hbm2ddl.auto\", \"update\");\r\n" + 
 				"		properties.put(\"hibernate.dialect\", \"org.hibernate.dialect.MySQL5Dialect\");\r\n" + 
 				"		return builder.dataSource(dataSource).properties(properties)\r\n" + 
-				"				.packages(\"com.example.model\").persistenceUnit(\""+name+"\").build();\r\n" + 
+				"				.packages(\"com.example.model\",\"com.example.repository."+name+"\").persistenceUnit(\""+name+"\").build();\r\n" + 
 				"	}\r\n" + 
 				"\r\n" + 
 				"	@Bean(name = \""+name+"TransactionManager\")\r\n" + 

@@ -10,35 +10,59 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.model.Book;
+import com.example.model.Employe;
 import com.example.model.User;
   
 @SpringBootApplication
 @RestController
 public class SpringBootMultipleDsApplication {
 
+	private  static String test;
+
 	@Autowired(required=true)
 	private com.example.user.repository.BookRepository bookRepository1;
-	@Autowired(required=true)
-	private com.example.book.repository.BookRepository2 bookRepository2;
+	
+
 
 	@Autowired(required=true)
 	  private com.example.user.repository.UserRepository userRepository1;
 	@Autowired(required=true)
 	  private com.example.book.repository.UserRepository2 userRepository2;
 	
+	@Autowired(required=true)
+	private  com.example.repository.djamel.RepoEmployedjamel RepoEmployedjamel ;
+	@Autowired(required=true)
+	private  com.example.repository.dddd.RepoEmployedddd RepoEmployedddd ;
 
+	@RequestMapping("/employe")
+	public List<Employe> gethUsers( ) {
+		 	return  RepoEmployedjamel.findAll();
+
+		}
+			 
+		@RequestMapping("/employedddd")
+		public List<Employe> gethUjhsers() {
+			 
+	 			return  RepoEmployedddd.findAll();
+
+		}
+				 
+	
+	
 	 @PostConstruct
 	public void addData2DB() {
 		userRepository1.saveAll(Stream.of(new User(744L, "John"), new User(455L, "Pitter")).collect(Collectors.toList()));
 		bookRepository1.saveAll(
 				Stream.of(new Book(111L, "Core Java"), new Book(222L, "Spring Boot")).collect(Collectors.toList()));
 		userRepository2.saveAll(Stream.of(new User(744L, "John"), new User(455L, "Pitter")).collect(Collectors.toList()));
-		bookRepository2.saveAll(
+	/*	bookRepository2.saveAll(
 				Stream.of(new Book(111L, "Core Java"), new Book(222L, "Spring Boot")).collect(Collectors.toList()));
-	
+	*/
 	 } 
 
 	@GetMapping("/getUsers")
@@ -58,10 +82,7 @@ public class SpringBootMultipleDsApplication {
  
 	}
 
-	@GetMapping("/getBooks2")
-	public List<Book> getBooks2() {
-		return bookRepository2.findAll();
-	}
+	 
 	
 	public static void main(String[] args) {
 	
