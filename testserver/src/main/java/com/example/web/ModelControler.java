@@ -136,8 +136,6 @@ public class ModelControler {
 	@RequestMapping(value="/formAdd" ,method=RequestMethod.GET)
 	public String formAddEnployee(Model model) {
 
-	
-
 		return "showModel";
 	}
 	//Employe

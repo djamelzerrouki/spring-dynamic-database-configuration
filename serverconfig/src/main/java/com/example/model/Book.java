@@ -17,7 +17,7 @@ public class Book {
 
  
 	@Id
-	private int id;
+	private Long id;
 	private String name;
 	 
 	

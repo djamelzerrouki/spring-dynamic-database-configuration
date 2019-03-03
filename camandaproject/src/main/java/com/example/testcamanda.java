@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
-import ch.qos.logback.core.net.SyslogOutputStream;
+import org.camunda.bpm.engine.ProcessEngineServices;
 import org.camunda.bpm.engine.RepositoryService;
 import org.camunda.bpm.engine.impl.javax.el.ExpressionFactory;
 import org.camunda.bpm.engine.impl.javax.el.ValueExpression;
@@ -81,48 +81,36 @@ start.setAttributeValueNs("custom-attribute", "http://camunda.org/custom", "new 
 		Collection<Task> tasks = (Collection<Task>) modelInstance.getModelElementsByType(Task.class);
 tasks.forEach(t->{
 
-	// read attributes by helper methods
+	// read attributes bvars.entrySet()y helper methods
 	String id = t.getId();
 	String name = t.getName();
 	String type=t.getElementType().getTypeName();
+ 	List<Task> possibleTasks=	new testcamanda().getNextTasks(t.getId() );
 
 	System .out.println("ID: "+ id +" Name : "+name +" Type : "+type);
-	// getNextTasks(t.getId(),new Map<String,Object> ());
-	//tnext.getName();
+	possibleTasks.forEach(tsk->{
+		System .out.println("NEXT TASK -> ID: "+ tsk.getId() +" Name : "+tsk.getName() +" Type : "+type);
 	});
 
+	});
 
-
-/*
-// edit attributes by helper methods
-		task.setId("new-id");
-		task.setName("new name");
-
-		// read attributes by generic XML model API (with optional namespace)
-		String custom1 = task.getAttributeValue("custom-attribute");
-		String custom2 = task.getAttributeValueNs("custom-attribute-2", "http://camunda.org/custom");
-
-// edit attributes by generic XML model API (with optional namespace)
-		task.setAttributeValue("custom-attribute", "new value");
-		task.setAttributeValueNs("custom-attribute", "http://camunda.org/custom", "new value");
-	*/
 }
 
 
-	public List<Task> getNextTasks(  String taskDefinitionKey, Map<String, Object> vars) {
+	public List<Task> getNextTasks(  String taskDefinitionKey ) {
 		File file = new File("../camandaproject\\src\\main\\resources\\loanApproval.bpmn");
 
 		BpmnModelInstance modelInstance = Bpmn.readModelFromFile(file);
 		ModelElementInstance instance = modelInstance.getModelElementById(taskDefinitionKey);
 		FlowNode flowNode = (FlowNode)instance;
-		return getOutgoingTask(flowNode, vars);
+		return getOutgoingTask(flowNode );
 	}
-	private List<Task> getOutgoingTask(FlowNode node, Map<String, Object> vars) {
+	private List<Task> getOutgoingTask(FlowNode node ) {
 		List<Task> possibleTasks = new ArrayList<>();
+
 		for(SequenceFlow sf: node.getOutgoing()) {
 			if (sf.getName() != null) {
 			//	LOGGER.info("Entering flow node {}", sf.getName());
-				System.out.println("Entering flow node {}"+sf.getName());
 			}
 			boolean next = true;
 			if (sf.getConditionExpression() != null) {
@@ -130,35 +118,26 @@ tasks.forEach(t->{
 				SimpleContext context = new SimpleContext(new SimpleResolver());
 
 			//	LOGGER.info("Generating map vars {}", vars.toString());
-				System.out.println("Generating map vars {}"+ vars.toString());
-				for (Map.Entry<String, Object> v : vars.entrySet()) {
-					if(v.getValue() instanceof Boolean) {
-						factory.createValueExpression(context, "${"+ v.getKey() +"}", Boolean.class).setValue(context, v.getValue());
-					}else if(v.getValue() instanceof java.util.Date) {
-						factory.createValueExpression(context, "${"+ v.getKey() +"}", java.util.Date.class).setValue(context, v.getValue());
-					}else {
-						factory.createValueExpression(context, "${"+ v.getKey() +"}", String.class).setValue(context, v.getValue());
-					}
-				}
+
 				ValueExpression expr1 = factory.createValueExpression(context, sf.getConditionExpression().getTextContent(), boolean.class);
 
 				next = (Boolean)expr1.getValue(context);
 		//	LOGGER.info("Evaluating expression {} to result {}", sf.getConditionExpression().getTextContent(), expr1.getValue(context));
-				System.out.println("Evaluating expression {} to result {}"+ sf.getConditionExpression().getTextContent()+ expr1.getValue(context));
 
 			}
 
 			if (next && sf.getTarget() != null) {
-				if (sf.getTarget() instanceof  Task) {
-					//LOGGER.info("Found next   task {}", sf.getTarget().getName());
-					System.out.println("Found next   task {}"+ sf.getTarget().getName());
 
-					possibleTasks.add(( Task)sf.getTarget());
-					break;
-				}
+					if (sf.getTarget() instanceof  Task) {
+						//LOGGER.info("Found next   task {}", sf.getTarget().getName());
+						 //System.out.println("Found next   task : "+ sf.getTarget().getName());
+				 	possibleTasks.add((Task) sf.getTarget());
+						break;
+					}
 
-				possibleTasks.addAll(getOutgoingTask(sf.getTarget(), vars));
+			possibleTasks.addAll(getOutgoingTask(sf.getTarget()));
 			}
+
 
 		}
 		return possibleTasks;

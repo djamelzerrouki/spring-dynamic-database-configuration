@@ -265,6 +265,7 @@ body.offcanvas #fh5co-aside {
   z-index: 999;
   position: fixed;
 }
+
 body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
   top: 0;
   -moz-transform: translateX(270px);

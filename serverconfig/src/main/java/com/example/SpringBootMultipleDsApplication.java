@@ -1,5 +1,6 @@
 package com.example;
 
+import java.io.File;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -33,12 +34,12 @@ public class SpringBootMultipleDsApplication {
 
 	 @PostConstruct
 	public void addData2DB() {
-		userRepository1.saveAll(Stream.of(new User(744, "John"), new User(455, "Pitter")).collect(Collectors.toList()));
+		userRepository1.saveAll(Stream.of(new User(744L, "John"), new User(455L, "Pitter")).collect(Collectors.toList()));
 		bookRepository1.saveAll(
-				Stream.of(new Book(111, "Core Java"), new Book(222, "Spring Boot")).collect(Collectors.toList()));
-		userRepository2.saveAll(Stream.of(new User(744, "John"), new User(455, "Pitter")).collect(Collectors.toList()));
+				Stream.of(new Book(111L, "Core Java"), new Book(222L, "Spring Boot")).collect(Collectors.toList()));
+		userRepository2.saveAll(Stream.of(new User(744L, "John"), new User(455L, "Pitter")).collect(Collectors.toList()));
 		bookRepository2.saveAll(
-				Stream.of(new Book(111, "Core Java"), new Book(222, "Spring Boot")).collect(Collectors.toList()));
+				Stream.of(new Book(111L, "Core Java"), new Book(222L, "Spring Boot")).collect(Collectors.toList()));
 	
 	 } 
 
@@ -65,6 +66,8 @@ public class SpringBootMultipleDsApplication {
 	}
 	
 	public static void main(String[] args) {
-		SpringApplication.run(SpringBootMultipleDsApplication.class, args);
+	
+ 		SpringApplication.run(SpringBootMultipleDsApplication.class, args);
+	
 	}
 }
