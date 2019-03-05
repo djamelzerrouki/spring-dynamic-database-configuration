@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.thymeleaf.org ">
+<head>
+<meta charset="UTF-8" />
+<title>NavigationBar</title>
+<link rel="stylesheet" type="text/css" media="all"
+	href="../../css/NavBar.css" th:href="@{/css/NavBar.css}" />
+</head>
+<body>
+<div th:fragment="menu2" >
+		<ul class="topnav">
+			<li><a class="active" href="/Modele/home">Home</a></li>
+			<li><a href="Employe">Employe</a></li>
+			<li><a href="Service">Service</a></li>
+			<li><a href="Dossier">Dossier</a></li>
+			<li><a href="Historique">Historique</a></li>
+
+
+			<li><a href="#contact">Contact</a></li>
+			<li class="right"><a href="#about">Modele</a></li>
+		</ul>
+</body>
+</html>

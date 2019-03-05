@@ -21,7 +21,7 @@ import com.exomple.configfile.Config;
 @RequestMapping(value="/model_cartenational")
 public class ControllerRepcartenational {
 	
-	@Autowired 
+	@Autowired(required=true)
 	private   RepoEmployecartenational red ;
 	@Autowired 
 	private   RepoServicecartenational rsd ;

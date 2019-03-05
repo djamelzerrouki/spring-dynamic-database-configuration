@@ -10006,3 +10006,166 @@ java.util.concurrent.TimeoutException
 
 !ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2019-03-06 00:00:22.885
 !MESSAGE Field value processing of @ConfigurationProperty meta-data is not supported
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-06 00:07:21.597
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.NFWqSeWN
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-06 00:07:21.603
+!MESSAGE subscribing to classpath changes: sts4.classpath.NFWqSeWN
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-06 00:07:21.608
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-06 00:07:21.614
+!MESSAGE subsribers = [sts4.classpath.NFWqSeWN]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-06 00:07:21.619
+!MESSAGE Sending initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-06 00:07:21.623
+!MESSAGE project serverconfig ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-06 00:07:21.623
+!MESSAGE Preparing classpath changed notification serverconfig
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-06 00:07:21.623
+!MESSAGE project camandaproject ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-06 00:07:21.639
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-06 00:07:21.639
+!MESSAGE project springsocialfacebook ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-06 00:07:21.654
+!MESSAGE project studentapp ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-06 00:07:21.654
+!MESSAGE project testML ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-06 00:07:21.654
+!MESSAGE classpath=129 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-06 00:07:21.670
+!MESSAGE project testserver ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-06 00:07:21.670
+!MESSAGE executing callback sts4.classpath.NFWqSeWN serverconfig false 129
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-06 00:07:21.686
+!MESSAGE Sending initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-06 00:07:21.686
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.NFWqSeWN => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-06 00:07:22.155
+!MESSAGE executing callback sts4.classpath.NFWqSeWN SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-06 00:07:22.155
+!MESSAGE Preparing classpath changed notification testserver
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-06 00:07:22.170
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-06 00:07:22.186
+!MESSAGE classpath=129 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-06 00:07:22.186
+!MESSAGE executing callback sts4.classpath.NFWqSeWN testserver false 129
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-06 00:07:23.274
+!MESSAGE executing callback sts4.classpath.NFWqSeWN SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-06 00:07:23.289
+!MESSAGE Preparing classpath changed notification testML
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-06 00:07:23.289
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-06 00:07:23.308
+!MESSAGE classpath=19 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-06 00:07:23.308
+!MESSAGE executing callback sts4.classpath.NFWqSeWN testML false 19
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-06 00:07:23.330
+!MESSAGE executing callback sts4.classpath.NFWqSeWN SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-06 00:07:23.330
+!MESSAGE Preparing classpath changed notification studentapp
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-06 00:07:23.345
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-06 00:07:23.361
+!MESSAGE classpath=135 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-06 00:07:23.376
+!MESSAGE executing callback sts4.classpath.NFWqSeWN studentapp false 135
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-06 00:07:23.470
+!MESSAGE executing callback sts4.classpath.NFWqSeWN SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-06 00:07:23.470
+!MESSAGE Preparing classpath changed notification springsocialfacebook
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-06 00:07:23.470
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-06 00:07:23.501
+!MESSAGE classpath=85 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-06 00:07:23.501
+!MESSAGE executing callback sts4.classpath.NFWqSeWN springsocialfacebook false 85
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-06 00:07:23.602
+!MESSAGE executing callback sts4.classpath.NFWqSeWN SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-06 00:07:23.612
+!MESSAGE Preparing classpath changed notification camandaproject
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-06 00:07:23.618
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-06 00:07:23.635
+!MESSAGE classpath=146 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-06 00:07:23.650
+!MESSAGE executing callback sts4.classpath.NFWqSeWN camandaproject false 146
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-06 00:07:23.759
+!MESSAGE executing callback sts4.classpath.NFWqSeWN SUCCESS [done]
+
+!ENTRY org.eclipse.lsp4e 4 0 2019-03-06 00:08:55.930
+!MESSAGE 
+!STACK 0
+java.lang.InterruptedException
+	at java.util.concurrent.CompletableFuture.reportGet(Unknown Source)
+	at java.util.concurrent.CompletableFuture.get(Unknown Source)
+	at org.eclipse.lsp4e.operations.hover.LSBasedHover.getHoverInfo(LSBasedHover.java:168)
+	at org.springframework.tooling.boot.ls.jdt.SpringBootJavaHoverProvider.getHoverInfo(SpringBootJavaHoverProvider.java:35)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:173)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:133)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2019-03-06 00:09:13.110
+!MESSAGE Field value processing of @ConfigurationProperty meta-data is not supported
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2019-03-06 00:10:46.334
+!MESSAGE Field value processing of @ConfigurationProperty meta-data is not supported
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2019-03-06 00:11:00.457
+!MESSAGE Field value processing of @ConfigurationProperty meta-data is not supported
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-06 00:34:40.061
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.NFWqSeWN
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-06 00:34:40.077
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.NFWqSeWN
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-06 00:34:40.077
+!MESSAGE subsribers = null
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-06 00:34:40.093
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.NFWqSeWN => OK
