@@ -9844,3 +9844,165 @@ java.util.concurrent.TimeoutException
 
 !ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2019-03-05 22:05:09.612
 !MESSAGE Field value processing of @ConfigurationProperty meta-data is not supported
+
+!ENTRY org.eclipse.jdt.debug 2 0 2019-03-05 22:34:57.777
+!MESSAGE Unable to find location of java.lang.Thread.setName() in debuggee JVM, for type java.lang.Thread
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:37:34.280
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.TmqWrzFZ
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:37:34.288
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.TmqWrzFZ
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:37:34.296
+!MESSAGE subsribers = null
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:37:34.300
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.TmqWrzFZ => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:38:12.574
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.CxsWbWfh
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:38:12.582
+!MESSAGE subscribing to classpath changes: sts4.classpath.CxsWbWfh
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:38:12.586
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:38:12.590
+!MESSAGE subsribers = [sts4.classpath.CxsWbWfh]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:38:12.598
+!MESSAGE Sending initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:38:12.602
+!MESSAGE project serverconfig ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:38:12.610
+!MESSAGE Preparing classpath changed notification serverconfig
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:38:12.614
+!MESSAGE project camandaproject ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:38:12.622
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:38:12.626
+!MESSAGE project springsocialfacebook ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:38:12.634
+!MESSAGE project studentapp ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:38:12.642
+!MESSAGE classpath=129 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:38:12.650
+!MESSAGE project testML ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:38:12.654
+!MESSAGE executing callback sts4.classpath.CxsWbWfh serverconfig false 129
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:38:12.662
+!MESSAGE project testserver ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:38:12.666
+!MESSAGE Sending initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:38:12.676
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.CxsWbWfh => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:38:13.117
+!MESSAGE executing callback sts4.classpath.CxsWbWfh SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:38:13.129
+!MESSAGE Preparing classpath changed notification testserver
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:38:13.141
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:38:13.169
+!MESSAGE classpath=129 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:38:13.182
+!MESSAGE executing callback sts4.classpath.CxsWbWfh testserver false 129
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:38:14.165
+!MESSAGE executing callback sts4.classpath.CxsWbWfh SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:38:14.173
+!MESSAGE Preparing classpath changed notification testML
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:38:14.181
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:38:14.189
+!MESSAGE classpath=19 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:38:14.197
+!MESSAGE executing callback sts4.classpath.CxsWbWfh testML false 19
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:38:14.209
+!MESSAGE executing callback sts4.classpath.CxsWbWfh SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:38:14.213
+!MESSAGE Preparing classpath changed notification studentapp
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:38:14.221
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:38:14.241
+!MESSAGE classpath=135 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:38:14.253
+!MESSAGE executing callback sts4.classpath.CxsWbWfh studentapp false 135
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:38:14.353
+!MESSAGE executing callback sts4.classpath.CxsWbWfh SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:38:14.361
+!MESSAGE Preparing classpath changed notification springsocialfacebook
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:38:14.373
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:38:14.390
+!MESSAGE classpath=85 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:38:14.398
+!MESSAGE executing callback sts4.classpath.CxsWbWfh springsocialfacebook false 85
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:38:14.482
+!MESSAGE executing callback sts4.classpath.CxsWbWfh SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:38:14.494
+!MESSAGE Preparing classpath changed notification camandaproject
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:38:14.502
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:38:14.523
+!MESSAGE classpath=146 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:38:14.531
+!MESSAGE executing callback sts4.classpath.CxsWbWfh camandaproject false 146
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:38:14.640
+!MESSAGE executing callback sts4.classpath.CxsWbWfh SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:55:41.360
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.CxsWbWfh
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:55:41.366
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.CxsWbWfh
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:55:41.373
+!MESSAGE subsribers = null
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-03-05 22:55:41.381
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.CxsWbWfh => OK
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2019-03-05 23:50:55.867
+!MESSAGE Field value processing of @ConfigurationProperty meta-data is not supported
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2019-03-06 00:00:22.885
+!MESSAGE Field value processing of @ConfigurationProperty meta-data is not supported

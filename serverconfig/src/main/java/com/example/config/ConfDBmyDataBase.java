@@ -19,29 +19,29 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(entityManagerFactoryRef = "cartenationalEntityManagerFactory", transactionManagerRef = "cartenationalTransactionManager", basePackages = {
-		"com.example.repository.cartenational" })
-public class ConfDBcartenational {
+@EnableJpaRepositories(entityManagerFactoryRef = "myDataBaseEntityManagerFactory", transactionManagerRef = "myDataBaseTransactionManager", basePackages = {
+		"com.example.repository.myDataBase" })
+public class ConfDBmyDataBase {
 
-	@Bean(name = "cartenationalDataSource")
-	@ConfigurationProperties(prefix = "spring.cartenational.datasource")
+	@Bean(name = "myDataBaseDataSource")
+	@ConfigurationProperties(prefix = "spring.myDataBase.datasource")
 	public DataSource dataSource() {
 		return DataSourceBuilder.create().build();
 	}
 
-	@Bean(name = "cartenationalEntityManagerFactory")
-	public LocalContainerEntityManagerFactoryBean cartenationalEntityManagerFactory(EntityManagerFactoryBuilder builder,
-			@Qualifier("cartenationalDataSource") DataSource dataSource) {
+	@Bean(name = "myDataBaseEntityManagerFactory")
+	public LocalContainerEntityManagerFactoryBean myDataBaseEntityManagerFactory(EntityManagerFactoryBuilder builder,
+			@Qualifier("myDataBaseDataSource") DataSource dataSource) {
 		HashMap<String, Object> properties = new HashMap<>();
 		properties.put("hibernate.hbm2ddl.auto", "update");
 		properties.put("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
 		return builder.dataSource(dataSource).properties(properties)
-				.packages("com.example.model","com.example.repository.cartenational").persistenceUnit("cartenational").build();
+				.packages("com.example.model","com.example.repository.myDataBase").persistenceUnit("myDataBase").build();
 	}
 
-	@Bean(name = "cartenationalTransactionManager")
-	public PlatformTransactionManager cartenationalTransactionManager(
-			@Qualifier("cartenationalEntityManagerFactory") EntityManagerFactory cartenationalEntityManagerFactory) {
-		return new JpaTransactionManager(cartenationalEntityManagerFactory);
+	@Bean(name = "myDataBaseTransactionManager")
+	public PlatformTransactionManager myDataBaseTransactionManager(
+			@Qualifier("myDataBaseEntityManagerFactory") EntityManagerFactory myDataBaseEntityManagerFactory) {
+		return new JpaTransactionManager(myDataBaseEntityManagerFactory);
 	}
 }
