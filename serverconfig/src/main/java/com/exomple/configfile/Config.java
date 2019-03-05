@@ -12,15 +12,28 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 public class Config {
 	private static Connection connection;
 
 	public static void main(String[] args) throws IOException {
 		// TODO main test methode by jimmi
-		configAll("dddd",6);
-		configAll("vvvb",9);
-		configAll("djamel",2);
-	}
+		configAll("djamel",6);
+		configAll("a",6);
+		configAll("b",6);
+		configAll("c",6);
+		  configAll("permis",6);
+
+
+		/*
+		 configAll("passeport",9);
+		configAll("cartebiometrique",2);
+		*/
+	 System.out.println("Don!");	
+	 }
 	public static  void configAll(String name,int nbr) throws IOException  {
 		// TODO main test methode by jimmi
 		 	newMkdirss(FinalName.pathRepository,name);
@@ -28,12 +41,13 @@ public class Config {
 			creatEntity(name,nbr);
 		// addingRepository
 		addingRepository(name,"Employe");
-		addingRepository(name,"Book");
-		addingRepository(name,"User");
-		addingRepository(name,"Service");
+ 		addingRepository(name,"Service");
 		addingRepository(name,"Historique");
 		addingRepository(name,"Dossier");
-
+		//creation de modele controller web 
+		creatController(name);
+		// creation new database with JDBC conecter 
+		creatDataBase(name);
 		// creation creat Config DB Class 
 		creatConfigDBClass(name);
 		// config Properties File
@@ -320,4 +334,90 @@ public class Config {
 
 }
 
+	// CREATE NEW CONTROLLER WEB 
+	public static void creatController(String  name) throws IOException {
+		String text = "Hello world";
+		StringBuffer buffer= new StringBuffer() ;
+		buffer.append ("package com.example;\r\n" + 
+				"\r\n" + 
+				"import java.io.IOException;\r\n" + 
+				"import java.sql.SQLException;\r\n" + 
+				"import java.util.List;\r\n" + 
+				"\r\n" + 
+				"import org.springframework.beans.factory.annotation.Autowired;\r\n" + 
+				"import org.springframework.stereotype.Controller;\r\n" + 
+				"import org.springframework.ui.Model;\r\n" + 
+				"import org.springframework.web.bind.annotation.PostMapping;\r\n" + 
+				"import org.springframework.web.bind.annotation.RequestMapping;\r\n" + 
+				"import org.springframework.web.bind.annotation.RequestMethod;\r\n" + 
+				"import org.springframework.web.bind.annotation.RequestParam;\r\n" + 
+				"\r\n" + 
+				"import com.example.model.Employe;\r\n" + 
+				"import com.example.model.Service;\r\n" + 
+				"import com.example.repository."+name+".RepoEmploye"+name+";\r\n" + 
+				"import com.example.repository."+name+".RepoService"+name+";\r\n" + 
+				"import com.exomple.configfile.Config;\r\n" + 
+				"@Controller \r\n" + 
+				"@RequestMapping(value=\"/model_"+name+"\")\r\n" + 
+				"public class ControllerRep"+name+" {\r\n" + 
+				"	private  static String namedb;\r\n" + 
+				"	\r\n" + 
+				"	@Autowired \r\n" + 
+				"	private   RepoEmploye"+name+" red ;\r\n" + 
+				"	@Autowired \r\n" + 
+				"	private   RepoService"+name+" rsd ;\r\n" + 
+				"	 	 \r\n"
+				+ "private static String namedb; \r\n" + 
+				"	\r\n" + 
+				"	// Modele selectioner\r\n" + 
+				"	@RequestMapping(\"/model\" )\r\n" + 
+				"	public String model(Model model,@RequestParam(name = \"m\") String namemodel) throws IOException, SQLException {\r\n" + 
+				"		//	ArrayList <String> list=TestserverApplication.showDatabase() ;\r\n" + 
+				"\r\n" + 
+				"		namemodel =namemodel.replaceAll(\"\\\\s\",\"\");\r\n" + 
+				"		namedb=namemodel;\r\n" + 
+				" 		model.addAttribute(\"modelName\",namedb);\r\n" + 
+				" \r\n" + 
+				"		return \"showModel\";\r\n" + 
+				"\r\n" + 
+				"	}" + 
+				"	//Employe\r\n" + 
+				"		@RequestMapping(value=\"/Employe\" ,method=RequestMethod.GET)\r\n" + 
+				"		public String formEmploye(Model model) {\r\n" + 
+				"			List<Employe> list = red.findAll();\r\n" + 
+				"			model.addAttribute(\"enployee\",new Employe());\r\n" + 
+				"			model.addAttribute(\"enployees\",list);\r\n" + 
+				"	 	return \"addenployee\";\r\n" + 
+				"		}\r\n" + 
+				"		//Service\r\n" + 
+				"			@RequestMapping(value=\"/Service\" ,method=RequestMethod.GET)\r\n" + 
+				"			public String formService(Model model) {\r\n" + 
+				"				List<Service> list = rsd.findAll();\r\n" + 
+				"				model.addAttribute(\"service\",new Employe());\r\n" + 
+				"				model.addAttribute(\"services\",list);\r\n" + 
+				"		 	return \"addservice\";\r\n" + 
+				"			}\r\n" + 
+				"\r\n" + 
+				"\r\n" + 
+				"}\r\n" );
+
+		text=buffer.toString();
+		BufferedWriter output = null;
+		try {
+			File file = new File(FinalName.pathPackage+"ControllerRep"+name+".java");
+			output = new BufferedWriter(new FileWriter(file));
+			output.write(text);
+			output.flush();
+		} catch ( IOException e ) {
+			e.printStackTrace();
+		} finally {
+			if ( output != null ) {
+				output.close();
+			}
+		}
+
+
+
+	}
+	
 }

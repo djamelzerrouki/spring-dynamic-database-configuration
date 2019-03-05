@@ -1,6 +1,7 @@
 package com.exomple.configfile;
 
 public class FinalName {
+
 	// FinalName.pathPackage
 	// path ta3 kinebri ndir creation ta3 new Package
 public static final  String pathPackage="../serverconfig/src/main/java/com/example/";

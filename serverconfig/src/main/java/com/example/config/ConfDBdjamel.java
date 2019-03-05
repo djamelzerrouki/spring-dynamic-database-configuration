@@ -11,6 +11,7 @@ import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
@@ -22,13 +23,13 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableJpaRepositories(entityManagerFactoryRef = "djamelEntityManagerFactory", transactionManagerRef = "djamelTransactionManager", basePackages = {
 		"com.example.repository.djamel" })
 public class ConfDBdjamel {
-
+	@Primary
 	@Bean(name = "djamelDataSource")
 	@ConfigurationProperties(prefix = "spring.djamel.datasource")
 	public DataSource dataSource() {
 		return DataSourceBuilder.create().build();
 	}
-
+@Primary
 	@Bean(name = "djamelEntityManagerFactory")
 	public LocalContainerEntityManagerFactoryBean djamelEntityManagerFactory(EntityManagerFactoryBuilder builder,
 			@Qualifier("djamelDataSource") DataSource dataSource) {
@@ -38,7 +39,7 @@ public class ConfDBdjamel {
 		return builder.dataSource(dataSource).properties(properties)
 				.packages("com.example.model","com.example.repository.djamel").persistenceUnit("djamel").build();
 	}
-
+@Primary
 	@Bean(name = "djamelTransactionManager")
 	public PlatformTransactionManager djamelTransactionManager(
 			@Qualifier("djamelEntityManagerFactory") EntityManagerFactory djamelEntityManagerFactory) {

@@ -24,4 +24,8 @@ private String prenom ;
 private String tlphon ;
 private boolean ch1 ;
 private boolean ch2 ;
+private boolean ch3 ;
+private boolean ch4 ;
+private boolean ch5 ;
+private boolean ch6 ;
 }

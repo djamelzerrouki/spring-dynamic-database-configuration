@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
   
 @SpringBootApplication
 @EnableAutoConfiguration
+//@RestController
 public class SpringBootMultipleDsApplication {
 	//@RestController
  

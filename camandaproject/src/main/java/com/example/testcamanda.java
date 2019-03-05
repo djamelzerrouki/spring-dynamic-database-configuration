@@ -23,32 +23,32 @@ import org.camunda.bpm.model.xml.type.ModelElementType;
 public class testcamanda {
 	static BpmnModelInstance modelInstance;
 	static void mymethod(){
-	File file = new File("../camandaproject\\src\\main\\resources\\loanApproval.bpmn");
-	BpmnModelInstance modelInstance = Bpmn.readModelFromFile(file);
-	getTaskNode(modelInstance);
-	// find element instance by ID
-	StartEvent start = (StartEvent) modelInstance.getModelElementById("start");
+		File file = new File("../camandaproject\\src\\main\\resources\\loanApproval.bpmn");
+		BpmnModelInstance modelInstance = Bpmn.readModelFromFile(file);
+		getTaskNode(modelInstance);
+		// find element instance by ID
+		StartEvent start = (StartEvent) modelInstance.getModelElementById("start");
 
-	// find all elements of the type task
-	modelInstance.getModel().getType(Task.class);
-	ModelElementType taskType = modelInstance.getModel().getType(Task.class);
-	Collection<ModelElementInstance> taskInstances = modelInstance.getModelElementsByType(taskType);
-	//taskInstances.forEach(System.out::println);
+		// find all elements of the type task
+		modelInstance.getModel().getType(Task.class);
+		ModelElementType taskType = modelInstance.getModel().getType(Task.class);
+		Collection<ModelElementInstance> taskInstances = modelInstance.getModelElementsByType(taskType);
+		//taskInstances.forEach(System.out::println);
 
-	SequenceFlow sequenceFlow = (SequenceFlow) modelInstance.getModelElementById("SequenceFlow_0sg4sqa");
+		SequenceFlow sequenceFlow = (SequenceFlow) modelInstance.getModelElementById("SequenceFlow_0sg4sqa");
 
-// get the source and target element
-	FlowNode source = sequenceFlow.getSource();
-	FlowNode target = sequenceFlow.getTarget();
+		// get the source and target element
+		FlowNode source = sequenceFlow.getSource();
+		FlowNode target = sequenceFlow.getTarget();
 
-// get all outgoing sequence flows of the source
-	Collection<SequenceFlow> outgoing = source.getOutgoing();
-	assert(outgoing.contains(sequenceFlow));
+		// get all outgoing sequence flows of the source
+		Collection<SequenceFlow> outgoing = source.getOutgoing();
+		assert(outgoing.contains(sequenceFlow));
 
- }
-public static void main(String[] arges){
-	mymethod();
-}
+	}
+	public static void main(String[] arges){
+		mymethod();
+	}
 
 	public static  Collection<FlowNode> getFlowingFlowNodes(FlowNode node) {
 		Collection<FlowNode> followingFlowNodes = new ArrayList<FlowNode>();
@@ -58,43 +58,43 @@ public static void main(String[] arges){
 		return followingFlowNodes;
 	}
 	public static void getStertEventNode(BpmnModelInstance modelInstance ){
-	StartEvent start = (StartEvent) modelInstance.getModelElementById("start");
+		StartEvent start = (StartEvent) modelInstance.getModelElementById("start");
 
-	// read attributes by helper methods
-	String id = start.getId();
-	String name = start.getName();
+		// read attributes by helper methods
+		String id = start.getId();
+		String name = start.getName();
 
-// edit attributes by helper methods
-start.setId("new-id");
-start.setName("new name");
+		// edit attributes by helper methods
+		start.setId("new-id");
+		start.setName("new name");
 
-	// read attributes by generic XML model API (with optional namespace)
-	String custom1 = start.getAttributeValue("custom-attribute");
-	String custom2 = start.getAttributeValueNs("custom-attribute-2", "http://camunda.org/custom");
+		// read attributes by generic XML model API (with optional namespace)
+		String custom1 = start.getAttributeValue("custom-attribute");
+		String custom2 = start.getAttributeValueNs("custom-attribute-2", "http://camunda.org/custom");
 
-// edit attributes by generic XML model API (with optional namespace)
-start.setAttributeValue("custom-attribute", "new value");
-start.setAttributeValueNs("custom-attribute", "http://camunda.org/custom", "new value");
+		// edit attributes by generic XML model API (with optional namespace)
+		start.setAttributeValue("custom-attribute", "new value");
+		start.setAttributeValueNs("custom-attribute", "http://camunda.org/custom", "new value");
 	}
 	// task method get node
 	public static void getTaskNode(BpmnModelInstance modelInstance ){
 		Collection<Task> tasks = (Collection<Task>) modelInstance.getModelElementsByType(Task.class);
-tasks.forEach(t->{
+		tasks.forEach(t->{
 
-	// read attributes bvars.entrySet()y helper methods
-	String id = t.getId();
-	String name = t.getName();
-	String type=t.getElementType().getTypeName();
- 	List<Task> possibleTasks=	new testcamanda().getNextTasks(t.getId() );
+			// read attributes bvars.entrySet()y helper methods
+			String id = t.getId();
+			String name = t.getName();
+			String type=t.getElementType().getTypeName();
+			List<Task> possibleTasks=	new testcamanda().getNextTasks(t.getId() );
 
-	System .out.println("ID: "+ id +" Name : "+name +" Type : "+type);
-	possibleTasks.forEach(tsk->{
-		System .out.println("NEXT TASK -> ID: "+ tsk.getId() +" Name : "+tsk.getName() +" Type : "+type);
-	});
+			System .out.println("ID: "+ id +" Name : "+name +" Type : "+type);
+			possibleTasks.forEach(tsk->{
+				System .out.println("NEXT TASK -> ID: "+ tsk.getId() +" Name : "+tsk.getName() +" Type : "+type);
+			});
 
-	});
+		});
 
-}
+	}
 
 
 	public List<Task> getNextTasks(  String taskDefinitionKey ) {
@@ -110,32 +110,32 @@ tasks.forEach(t->{
 
 		for(SequenceFlow sf: node.getOutgoing()) {
 			if (sf.getName() != null) {
-			//	LOGGER.info("Entering flow node {}", sf.getName());
+				//	LOGGER.info("Entering flow node {}", sf.getName());
 			}
 			boolean next = true;
 			if (sf.getConditionExpression() != null) {
 				ExpressionFactory factory = new ExpressionFactoryImpl();
 				SimpleContext context = new SimpleContext(new SimpleResolver());
 
-			//	LOGGER.info("Generating map vars {}", vars.toString());
+				//	LOGGER.info("Generating map vars {}", vars.toString());
 
 				ValueExpression expr1 = factory.createValueExpression(context, sf.getConditionExpression().getTextContent(), boolean.class);
 
 				next = (Boolean)expr1.getValue(context);
-		//	LOGGER.info("Evaluating expression {} to result {}", sf.getConditionExpression().getTextContent(), expr1.getValue(context));
+				//	LOGGER.info("Evaluating expression {} to result {}", sf.getConditionExpression().getTextContent(), expr1.getValue(context));
 
 			}
 
 			if (next && sf.getTarget() != null) {
 
-					if (sf.getTarget() instanceof  Task) {
-						//LOGGER.info("Found next   task {}", sf.getTarget().getName());
-						 //System.out.println("Found next   task : "+ sf.getTarget().getName());
-				 	possibleTasks.add((Task) sf.getTarget());
-						break;
-					}
+				if (sf.getTarget() instanceof  Task) {
+					//LOGGER.info("Found next   task {}", sf.getTarget().getName());
+					//System.out.println("Found next   task : "+ sf.getTarget().getName());
+					possibleTasks.add((Task) sf.getTarget());
+					break;
+				}
 
-			possibleTasks.addAll(getOutgoingTask(sf.getTarget()));
+				possibleTasks.addAll(getOutgoingTask(sf.getTarget()));
 			}
 
 
@@ -143,3 +143,4 @@ tasks.forEach(t->{
 		return possibleTasks;
 	}
 }
+

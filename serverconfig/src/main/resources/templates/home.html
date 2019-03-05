@@ -28,7 +28,7 @@
 				<div class="row animate-box" data-animate-effect="fadeInLeft">
 					<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item"
 						th:each="e:${modeldata}">
-						<a th:href="@{'model?m=' + ${e}}"> <img src="../static/images/model.png"
+						<a th:href="@{'/'+${e}+'/model?m=' + ${e}}"> <img src="../static/images/model.png"
 							th:src="@{/images/model.png}"
 							alt="Free HTML5 Website Template by FreeHTML5.co"
 							class="img-responsive" />

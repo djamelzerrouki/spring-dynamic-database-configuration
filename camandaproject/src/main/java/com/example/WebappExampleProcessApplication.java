@@ -37,5 +37,5 @@ public class WebappExampleProcessApplication {
 	@EventListener
 	private void processPostDeploy(PostDeployEvent event) {
 		runtimeService.startProcessInstanceByKey("Process_1");
- 	}
+	}
 }
