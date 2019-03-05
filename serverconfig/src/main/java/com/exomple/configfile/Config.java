@@ -12,9 +12,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.example.model.Employe;
+import com.example.model.Service;
 
 public class Config {
 	private static Connection connection;
@@ -45,6 +47,31 @@ public class Config {
 		addingRepository(name,"Historique");
 		addingRepository(name,"Dossier");
 		//creation de modele controller web 
+		creatController(name);
+		// creation new database with JDBC conecter 
+		creatDataBase(name);
+		// creation creat Config DB Class 
+		creatConfigDBClass(name);
+		// config Properties File
+		configPropertiesFile(name);	
+
+	}
+	// config dosser
+	public static  void configDossier(String name,int nbr) throws IOException  {
+		 	creatEntity(name,nbr);
+		 	addingRepository(name,"Dossier");
+		 
+	}
+	// config DB 
+	public static  void configDB(String name ) throws IOException  {
+		// TODO main test methode by jimmi
+		 	newMkdirss(FinalName.pathRepository,name);
+		  
+		// addingRepository
+		addingRepository(name,"Employe");
+ 		addingRepository(name,"Service");
+		addingRepository(name,"Historique");
+ 		//creation de modele controller web 
 		creatController(name);
 		// creation new database with JDBC conecter 
 		creatDataBase(name);
@@ -295,16 +322,7 @@ public class Config {
 		}
 
 		return 0;
-	}
-	//configModale
-	public static void configModale(String nameDataBase) throws IOException {
-		if(nameDataBase!=null) {
-			nameDataBase =nameDataBase.replaceAll("\\s","");}
-
-		configPropertiesFile(nameDataBase); 
-		creatDataBase(nameDataBase);
-		showDatabase();
-	}
+	} 
 	// showDatabase
 	public static ArrayList<String> showDatabase(){
 	ArrayList<String> listData=new ArrayList<String>();
@@ -359,8 +377,7 @@ public class Config {
 				"import com.exomple.configfile.Config;\r\n" + 
 				"@Controller \r\n" + 
 				"@RequestMapping(value=\"/model_"+name+"\")\r\n" + 
-				"public class ControllerRep"+name+" {\r\n" + 
-				"	private  static String namedb;\r\n" + 
+				"public class ControllerRep"+name+" {\r\n" +
 				"	\r\n" + 
 				"	@Autowired \r\n" + 
 				"	private   RepoEmploye"+name+" red ;\r\n" + 
@@ -398,7 +415,18 @@ public class Config {
 				"		 	return \"addservice\";\r\n" + 
 				"			}\r\n" + 
 				"\r\n" + 
-				"\r\n" + 
+				"@RequestMapping(value=\"/saveEnployee\" ,method=RequestMethod.POST)\r\n" + 
+				"			public String saveEnployee(Employe ep) {\r\n" + 
+				"				red.save(ep);\r\n" + 
+				"				return \"redirect:Employe\";\r\n" + 
+				"			}	\r\n" + 
+				"			//saveService\r\n" + 
+				"			@RequestMapping(value=\"/saveService\" ,method=RequestMethod.POST)\r\n" + 
+				"			public String saveService(Service srv) {\r\n" + 
+				"				rsd.save(srv);\r\n" + 
+				"				return \"redirect:Service\";\r\n" + 
+				"			}"
+				+ "\r\n" + 
 				"}\r\n" );
 
 		text=buffer.toString();

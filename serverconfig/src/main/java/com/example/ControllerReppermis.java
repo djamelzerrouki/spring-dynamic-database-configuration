@@ -53,6 +53,18 @@ private static String namedb;
 				model.addAttribute("services",list);
 		 	return "addservice";
 			}
+			
+			@RequestMapping(value="/saveEnployee" ,method=RequestMethod.POST)
+			public String saveEnployee(Employe ep) {
+				red.save(ep);
+				return "redirect:Employe";
+			}	
+			//saveService
+			@RequestMapping(value="/saveService" ,method=RequestMethod.POST)
+			public String saveService(Service srv) {
+				rsd.save(srv);
+				return "redirect:Service";
+			}
 
 
 }

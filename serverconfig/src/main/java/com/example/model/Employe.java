@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -25,7 +26,7 @@ public class Employe implements Serializable{
 	private String name;
 	private String password;
 	private String tlphon;
-	private Long servicid;
+ 	private Long servicid;
 	@DateTimeFormat(pattern="yyyy-MM-dd")   
     private Date datenes;
     

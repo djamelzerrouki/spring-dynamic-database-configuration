@@ -6,12 +6,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
   
 @SpringBootApplication
 @EnableAutoConfiguration
-//@RestController
-public class SpringBootMultipleDsApplication {
+ public class SpringBootMultipleDsApplication {
 	//@RestController
  
 	public static void main(String[] args) {
-	
+	    System.setProperty("spring.devtools.restart.enabled", "false");
+
  		SpringApplication.run(SpringBootMultipleDsApplication.class, args);
 	
 	}
