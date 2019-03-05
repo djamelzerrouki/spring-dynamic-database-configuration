@@ -65,6 +65,10 @@ private static String namedb;
 				rsd.save(srv);
 				return "redirect:Service";
 			}
+			@RequestMapping(value="/bpmn")
+			public String bpmnModele()  {
+		 		return "bpmn";
+			}
 
 
 }

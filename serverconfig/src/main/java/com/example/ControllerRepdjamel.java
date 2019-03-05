@@ -7,6 +7,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -15,15 +16,17 @@ import com.example.model.Employe;
 import com.example.model.Service;
 import com.example.repository.djamel.RepoEmployedjamel;
 import com.example.repository.djamel.RepoServicedjamel;
+import com.exomple.configfile.Config;
 @Controller 
 @RequestMapping(value="/model_djamel")
 public class ControllerRepdjamel {
- 	
+	
 	@Autowired 
 	private   RepoEmployedjamel red ;
 	@Autowired 
 	private   RepoServicedjamel rsd ;
-	 	private static String namedb; 
+	 	 
+private static String namedb; 
 	
 	// Modele selectioner
 	@RequestMapping("/model" )
@@ -36,8 +39,7 @@ public class ControllerRepdjamel {
  
 		return "showModel";
 
-	}
-	//Employe
+	}	//Employe
 		@RequestMapping(value="/Employe" ,method=RequestMethod.GET)
 		public String formEmploye(Model model) {
 			List<Employe> list = red.findAll();
@@ -53,9 +55,8 @@ public class ControllerRepdjamel {
 				model.addAttribute("services",list);
 		 	return "addservice";
 			}
-			
 
-			@RequestMapping(value="/saveEnployee" ,method=RequestMethod.POST)
+@RequestMapping(value="/saveEnployee" ,method=RequestMethod.POST)
 			public String saveEnployee(Employe ep) {
 				red.save(ep);
 				return "redirect:Employe";
@@ -66,6 +67,7 @@ public class ControllerRepdjamel {
 				rsd.save(srv);
 				return "redirect:Service";
 			}
-
-
-}
+@RequestMapping(value="/bpmn")
+	public String bpmnModele()  {
+ 		return "bpmn";
+	}}

@@ -23,7 +23,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableJpaRepositories(entityManagerFactoryRef = "djamelEntityManagerFactory", transactionManagerRef = "djamelTransactionManager", basePackages = {
 		"com.example.repository.djamel" })
 public class ConfDBdjamel {
-	@Primary
+@Primary
 	@Bean(name = "djamelDataSource")
 	@ConfigurationProperties(prefix = "spring.djamel.datasource")
 	public DataSource dataSource() {

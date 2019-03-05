@@ -426,7 +426,11 @@ public class Config {
 				"				rsd.save(srv);\r\n" + 
 				"				return \"redirect:Service\";\r\n" + 
 				"			}"
-				+ "\r\n" + 
+				+ "\r\n"
+				+ "@RequestMapping(value=\"/bpmn\")\r\n" + 
+				"	public String bpmnModele()  {\r\n" + 
+				" 		return \"bpmn\";\r\n" + 
+				"	}" + 
 				"}\r\n" );
 
 		text=buffer.toString();
